@@ -1,5 +1,5 @@
 {
   "version": "2026-03-02",
-  "download_url": "https://raw.githubusercontent.com/procontexthq/registry/refs/heads/main/docs/known-libraries.json",
+  "download_url": "https://procontexthq.github.io/known-libraries.json",
   "checksum": "sha256:335670eefa7f5e6278eb1daaa08ad0e67b73b8a73166642d82a2b9fae1faf9bf"
 }
