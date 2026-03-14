@@ -38,6 +38,7 @@ Append your entry to the JSON array:
 {
   "id": "my-library",
   "name": "My Library",
+  "description": "A brief description of what the library does",
   "docs_url": "https://docs.example.com",
   "repo_url": "https://github.com/org/my-library",
   "languages": ["python"],
@@ -51,6 +52,8 @@ Append your entry to the JSON array:
 ```
 
 **Required fields:** `id`, `name`, `llms_txt_url`
+
+**Optional fields:** `description`, `docs_url`, `repo_url`
 
 **`id` rules:** lowercase, alphanumeric, hyphens and underscores only, must start with a letter or digit — e.g. `langchain`, `openai`, `react`
 
@@ -69,6 +72,13 @@ uv run scripts/validate.py all --urls
 ---
 
 ## Field Reference
+
+### `description`
+A brief, human-readable summary of what the library does. Optional — if present, must be a non-empty string.
+
+```json
+"description": "Data validation using Python type annotations"
+```
 
 ### `docs_url`
 The standard documentation URL for the library — the human-readable docs site provided by the maintainers. This is **not** the `llms.txt` URL.

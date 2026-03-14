@@ -36,9 +36,9 @@ uv sync
 
 | Command | What it does |
 |---------|--------------|
-| `uv run scripts/validate.py validate` | Fast schema check (rules 1–19) |
-| `uv run scripts/validate.py validate --urls` | Schema check + URL reachability (rule 20) |
-| `uv run scripts/validate.py validate --pypi` | Schema check + PyPI existence (rule 21) |
+| `uv run scripts/validate.py validate` | Fast schema check (rules 1–20) |
+| `uv run scripts/validate.py validate --urls` | Schema check + URL reachability (rule 21) |
+| `uv run scripts/validate.py validate --pypi` | Schema check + PyPI existence (rule 22) |
 | `uv run scripts/validate.py checksum` | Compute SHA-256 and update `registry_metadata.json` only |
 | `uv run scripts/validate.py all` | Validate then update checksum (aborts on errors) |
 | `uv run scripts/validate.py all --urls --pypi` | Run all checks |
@@ -56,35 +56,36 @@ uv sync
 | 5 | `llms_txt_url` is a valid URL starting with `https://` |
 | 6 | `docs_url`, if present, is a valid URL |
 | 7 | `repo_url`, if present, is a valid URL |
-| 8 | `languages` is a list of strings (not `null`, not a bare string) |
-| 9 | `packages.pypi` is a list of strings |
-| 10 | `packages.npm` is a list of strings |
-| 11 | `aliases` is a list of strings |
-| 12 | No fields outside the known set (`id`, `name`, `llms_txt_url`, `docs_url`, `repo_url`, `languages`, `packages`, `aliases`) — catches typos like `alias` instead of `aliases` |
+| 8 | `description`, if present, is a non-empty string |
+| 9 | `languages` is a list of strings (not `null`, not a bare string) |
+| 10 | `packages.pypi` is a list of strings |
+| 11 | `packages.npm` is a list of strings |
+| 12 | `aliases` is a list of strings |
+| 13 | No fields outside the known set (`id`, `name`, `description`, `llms_txt_url`, `docs_url`, `repo_url`, `languages`, `packages`, `aliases`) — catches typos like `alias` instead of `aliases` |
 
 #### Cross-entry rules
 
 | # | Rule |
 |---|------|
-| 13 | No two entries share the same `id` |
-| 14 | No two entries share the same PyPI package name |
-| 15 | No two entries share the same npm package name |
-| 16 | No two entries share the same alias |
+| 14 | No two entries share the same `id` |
+| 15 | No two entries share the same PyPI package name |
+| 16 | No two entries share the same npm package name |
+| 17 | No two entries share the same alias |
 
 #### File-level rules
 
 | # | Rule |
 |---|------|
-| 17 | File is valid JSON |
-| 18 | Top-level structure is an array |
-| 19 | Array is non-empty |
+| 18 | File is valid JSON |
+| 19 | Top-level structure is an array |
+| 20 | Array is non-empty |
 
 #### Optional network checks (slow)
 
 | # | Flag | Rule |
 |---|------|------|
-| 20 | `--urls` | `llms_txt_url` is reachable (HTTP 200) |
-| 21 | `--pypi` | PyPI package names in `packages.pypi` exist on pypi.org |
+| 21 | `--urls` | `llms_txt_url` is reachable (HTTP 200) |
+| 22 | `--pypi` | PyPI package names in `packages.pypi` exist on pypi.org |
 
 ## Contributing
 

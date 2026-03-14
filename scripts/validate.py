@@ -3,9 +3,9 @@
 ProContext Registry — validation and checksum management.
 
 Usage:
-    uv run scripts/validate.py validate              # fast schema check (rules 1–19)
-    uv run scripts/validate.py validate --urls       # + URL reachability (rule 20)
-    uv run scripts/validate.py validate --pypi       # + PyPI package existence (rule 21)
+    uv run scripts/validate.py validate              # fast schema check (rules 1–20)
+    uv run scripts/validate.py validate --urls       # + URL reachability (rule 21)
+    uv run scripts/validate.py validate --pypi       # + PyPI package existence (rule 22)
     uv run scripts/validate.py checksum              # compute & update checksum only
     uv run scripts/validate.py all                   # validate then update checksum
     uv run scripts/validate.py all --urls --pypi     # everything
@@ -37,7 +37,7 @@ FAILED_URLS_FILE = REPO_ROOT / "data" / "failed_url_checks.json"
 # --------------------------------------------------------------------------- #
 
 KNOWN_FIELDS = frozenset(
-    {"id", "name", "docs_url", "repo_url", "languages", "packages", "aliases", "llms_txt_url"}
+    {"id", "name", "description", "docs_url", "repo_url", "languages", "packages", "aliases", "llms_txt_url"}
 )
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 
@@ -58,7 +58,7 @@ class ValidationError:
 
 
 # --------------------------------------------------------------------------- #
-# File-level validation (rules 17–19)
+# File-level validation (rules 18–20)
 # --------------------------------------------------------------------------- #
 
 
@@ -66,31 +66,31 @@ def validate_file(path: Path) -> tuple[list[Any] | None, list[ValidationError]]:
     """Parse JSON and validate top-level structure. Returns (libraries, errors)."""
     errors: list[ValidationError] = []
 
-    # Rule 17: valid JSON
+    # Rule 18: valid JSON
     try:
         with open(path, "rb") as f:
             raw = f.read()
         libraries = json.loads(raw)
     except json.JSONDecodeError as exc:
-        errors.append(ValidationError(17, None, f"Invalid JSON: {exc}"))
+        errors.append(ValidationError(18, None, f"Invalid JSON: {exc}"))
         return None, errors
 
-    # Rule 18: top-level is an array
+    # Rule 19: top-level is an array
     if not isinstance(libraries, list):
         errors.append(
-            ValidationError(18, None, f"Top-level must be an array, got {type(libraries).__name__}")
+            ValidationError(19, None, f"Top-level must be an array, got {type(libraries).__name__}")
         )
         return None, errors
 
-    # Rule 19: array is non-empty
+    # Rule 20: array is non-empty
     if not libraries:
-        errors.append(ValidationError(19, None, "Array must not be empty"))
+        errors.append(ValidationError(20, None, "Array must not be empty"))
 
     return libraries, errors
 
 
 # --------------------------------------------------------------------------- #
-# Per-entry and cross-entry validation (rules 1–16)
+# Per-entry and cross-entry validation (rules 1–17)
 # --------------------------------------------------------------------------- #
 
 
@@ -175,25 +175,34 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
                 )
 
         # ------------------------------------------------------------------- #
-        # Rule 8: languages is a list of strings (not null, not a bare string)
+        # Rule 8: description, if present, is a non-empty string
+        # ------------------------------------------------------------------- #
+        if "description" in entry and entry["description"] is not None:
+            if not isinstance(entry["description"], str) or not entry["description"].strip():
+                errors.append(
+                    ValidationError(8, display_id, "description must be a non-empty string")
+                )
+
+        # ------------------------------------------------------------------- #
+        # Rule 9: languages is a list of strings (not null, not a bare string)
         # ------------------------------------------------------------------- #
         languages = entry.get("languages")
         if not isinstance(languages, list) or not all(isinstance(l, str) for l in languages):
             errors.append(
                 ValidationError(
-                    8,
+                    9,
                     display_id,
                     f"languages must be a list of strings, got {type(languages).__name__}",
                 )
             )
 
         # ------------------------------------------------------------------- #
-        # Rule 9: packages.pypi is a list of strings
-        # Rule 10: packages.npm is a list of strings
+        # Rule 10: packages.pypi is a list of strings
+        # Rule 11: packages.npm is a list of strings
         # ------------------------------------------------------------------- #
         packages = entry.get("packages", {})
         if not isinstance(packages, dict):
-            errors.append(ValidationError(9, display_id, "packages must be an object"))
+            errors.append(ValidationError(10, display_id, "packages must be an object"))
             pypi_list: list = []
             npm_list: list = []
         else:
@@ -201,42 +210,42 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
             npm_list = packages.get("npm", [])
             if not isinstance(pypi_list, list) or not all(isinstance(p, str) for p in pypi_list):
                 errors.append(
-                    ValidationError(9, display_id, "packages.pypi must be a list of strings")
+                    ValidationError(10, display_id, "packages.pypi must be a list of strings")
                 )
                 pypi_list = []
             if not isinstance(npm_list, list) or not all(isinstance(p, str) for p in npm_list):
                 errors.append(
-                    ValidationError(10, display_id, "packages.npm must be a list of strings")
+                    ValidationError(11, display_id, "packages.npm must be a list of strings")
                 )
                 npm_list = []
 
         # ------------------------------------------------------------------- #
-        # Rule 11: aliases is a list of strings
+        # Rule 12: aliases is a list of strings
         # ------------------------------------------------------------------- #
         aliases = entry.get("aliases", [])
         if not isinstance(aliases, list) or not all(isinstance(a, str) for a in aliases):
             errors.append(
-                ValidationError(11, display_id, "aliases must be a list of strings")
+                ValidationError(12, display_id, "aliases must be a list of strings")
             )
             aliases = []
 
         # ------------------------------------------------------------------- #
-        # Rule 12: no unknown fields
+        # Rule 13: no unknown fields
         # ------------------------------------------------------------------- #
         unknown = set(entry.keys()) - KNOWN_FIELDS
         if unknown:
             errors.append(
-                ValidationError(12, display_id, f"Unknown field(s): {sorted(unknown)} — did you mean aliases/docs_url/repo_url?")
+                ValidationError(13, display_id, f"Unknown field(s): {sorted(unknown)} — did you mean aliases/docs_url/repo_url?")
             )
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 13 — duplicate IDs
+        # Cross-entry: Rule 14 — duplicate IDs
         # ------------------------------------------------------------------- #
         if isinstance(raw_id, str) and raw_id:
             if raw_id in seen_ids:
                 errors.append(
                     ValidationError(
-                        13,
+                        14,
                         display_id,
                         f"Duplicate id {raw_id!r} (also at index {seen_ids[raw_id]})",
                     )
@@ -245,13 +254,13 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
                 seen_ids[raw_id] = i
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 14 — duplicate PyPI package names
+        # Cross-entry: Rule 15 — duplicate PyPI package names
         # ------------------------------------------------------------------- #
         for pkg in pypi_list:
             if pkg in seen_pypi:
                 errors.append(
                     ValidationError(
-                        14,
+                        15,
                         display_id,
                         f"PyPI package {pkg!r} is already listed under {seen_pypi[pkg]!r}",
                     )
@@ -260,13 +269,13 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
                 seen_pypi[pkg] = display_id
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 15 — duplicate npm package names
+        # Cross-entry: Rule 16 — duplicate npm package names
         # ------------------------------------------------------------------- #
         for pkg in npm_list:
             if pkg in seen_npm:
                 errors.append(
                     ValidationError(
-                        15,
+                        16,
                         display_id,
                         f"npm package {pkg!r} is already listed under {seen_npm[pkg]!r}",
                     )
@@ -275,13 +284,13 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
                 seen_npm[pkg] = display_id
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 16 — duplicate aliases
+        # Cross-entry: Rule 17 — duplicate aliases
         # ------------------------------------------------------------------- #
         for alias in aliases:
             if alias in seen_aliases:
                 errors.append(
                     ValidationError(
-                        16,
+                        17,
                         display_id,
                         f"Alias {alias!r} is already used by {seen_aliases[alias]!r}",
                     )
@@ -298,7 +307,7 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
 
 
 def check_urls(libraries: list[Any]) -> list[ValidationError]:
-    """Rule 20: llms_txt_url is reachable (HTTP 200). Runs in parallel."""
+    """Rule 21: llms_txt_url is reachable (HTTP 200). Runs in parallel."""
     import httpx
 
     errors: list[ValidationError] = []
@@ -315,10 +324,10 @@ def check_urls(libraries: list[Any]) -> list[ValidationError]:
                 resp = httpx.get(url, follow_redirects=True, timeout=15)
             if resp.status_code != 200:
                 return ValidationError(
-                    20, eid, f"llms_txt_url returned HTTP {resp.status_code}: {url}"
+                    21, eid, f"llms_txt_url returned HTTP {resp.status_code}: {url}"
                 )
         except Exception as exc:
-            return ValidationError(20, eid, f"llms_txt_url unreachable ({exc}): {url}")
+            return ValidationError(21, eid, f"llms_txt_url unreachable ({exc}): {url}")
         return None
 
     entries = [e for e in libraries if isinstance(e, dict)]
@@ -331,7 +340,7 @@ def check_urls(libraries: list[Any]) -> list[ValidationError]:
 
 
 def check_pypi(libraries: list[Any]) -> list[ValidationError]:
-    """Rule 21: PyPI packages exist on pypi.org. Runs in parallel."""
+    """Rule 22: PyPI packages exist on pypi.org. Runs in parallel."""
     import httpx
 
     errors: list[ValidationError] = []
@@ -352,13 +361,13 @@ def check_pypi(libraries: list[Any]) -> list[ValidationError]:
         try:
             resp = httpx.get(f"https://pypi.org/pypi/{pkg}/json", timeout=10)
             if resp.status_code == 404:
-                return ValidationError(21, eid, f"PyPI package {pkg!r} not found on pypi.org")
+                return ValidationError(22, eid, f"PyPI package {pkg!r} not found on pypi.org")
             if resp.status_code != 200:
                 return ValidationError(
-                    21, eid, f"PyPI package {pkg!r} returned HTTP {resp.status_code}"
+                    22, eid, f"PyPI package {pkg!r} returned HTTP {resp.status_code}"
                 )
         except Exception as exc:
-            return ValidationError(21, eid, f"PyPI check failed for {pkg!r}: {exc}")
+            return ValidationError(22, eid, f"PyPI check failed for {pkg!r}: {exc}")
         return None
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
@@ -375,8 +384,8 @@ def check_pypi(libraries: list[Any]) -> list[ValidationError]:
 
 
 def append_failed_url_entries(libraries: list[Any], url_errors: list[ValidationError]) -> None:
-    """Append entries that failed Rule 20 to FAILED_URLS_FILE (deduplicates by id)."""
-    failed_ids = {err.entry_id for err in url_errors if err.rule == 20 and err.entry_id}
+    """Append entries that failed Rule 21 to FAILED_URLS_FILE (deduplicates by id)."""
+    failed_ids = {err.entry_id for err in url_errors if err.rule == 21 and err.entry_id}
     if not failed_ids:
         return
 
@@ -506,9 +515,9 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 examples:
-  uv run scripts/validate.py validate              fast schema check (rules 1-19)
-  uv run scripts/validate.py validate --urls       + URL reachability (rule 20)
-  uv run scripts/validate.py validate --pypi       + PyPI package existence (rule 21)
+  uv run scripts/validate.py validate              fast schema check (rules 1-20)
+  uv run scripts/validate.py validate --urls       + URL reachability (rule 21)
+  uv run scripts/validate.py validate --pypi       + PyPI package existence (rule 22)
   uv run scripts/validate.py checksum              compute & update checksum only
   uv run scripts/validate.py all                   validate then update checksum
   uv run scripts/validate.py all --urls --pypi     run everything
@@ -518,13 +527,13 @@ examples:
 
     # validate
     p_validate = subparsers.add_parser(
-        "validate", help="Validate registry structure (rules 1–19 always; 20–21 optional)"
+        "validate", help="Validate registry structure (rules 1–20 always; 21–22 optional)"
     )
     p_validate.add_argument(
-        "--urls", action="store_true", help="Also check URL reachability (slow, network)"
+        "--urls", action="store_true", help="Also check URL reachability (rule 21, slow)"
     )
     p_validate.add_argument(
-        "--pypi", action="store_true", help="Also verify PyPI packages exist (slow, network)"
+        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 22, slow)"
     )
     p_validate.set_defaults(func=cmd_validate)
 
@@ -539,10 +548,10 @@ examples:
         "all", help="Validate structure then update checksum (aborts on errors)"
     )
     p_all.add_argument(
-        "--urls", action="store_true", help="Also check URL reachability (slow, network)"
+        "--urls", action="store_true", help="Also check URL reachability (rule 21, slow)"
     )
     p_all.add_argument(
-        "--pypi", action="store_true", help="Also verify PyPI packages exist (slow, network)"
+        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 22, slow)"
     )
     p_all.set_defaults(func=cmd_all)
 
