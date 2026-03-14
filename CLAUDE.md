@@ -19,4 +19,21 @@ You must:
    - ❌ One giant commit covering unrelated changes: hard to review, hard to revert.
    - ❌ A commit for every tiny edit: noise, harder to understand history.
 5. Commit only the changes relevant to the current session. If there are other pending changes, ask the user whether you should commit them as well.
-6. **Verify before pushing**: ensure `registry_metadata.json` checksum is updated. Refer to [README](README.md) for detailed instructions.
+6. **Verify before pushing**: ensure `registry_metadata.json` checksum matches the actual bytes of `known-libraries.json`, and that the `version` field has been bumped.
+
+## Registry Update Checklist
+
+Every time `known-libraries.json` is modified:
+
+1. Recompute the SHA-256 checksum:
+   ```bash
+   python3 -c "
+   import hashlib
+   with open('docs/known-libraries.json', 'rb') as f:
+       data = f.read()
+   print('sha256:' + hashlib.sha256(data).hexdigest())
+   "
+   ```
+2. Update `checksum` in `docs/registry_metadata.json` and Bump `version` (use today's date: `YYYY-MM-DD`, or append `-N` for multiple releases in a day). You can also use `uv run scripts/validate.py checksum` to auto updte. Refer to [README](README.md) for detailed instructions.
+
+4. Validate all new `llms_txt_url` values are reachable before committing.
