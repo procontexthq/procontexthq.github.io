@@ -32,28 +32,28 @@ Expect a `200 OK` response. Do not add entries whose `llms_txt_url` returns an e
 
 ### 2. Add an entry to `docs/known-libraries.json`
 
-Append your entry to the JSON array:
+Append your entry to the JSON array. See [registry-schema.md](registry-schema.md) for the full field reference.
 
 ```json
 {
   "id": "my-library",
   "name": "My Library",
-  "description": "A brief description of what the library does",
-  "docs_url": "https://docs.example.com",
-  "repo_url": "https://github.com/org/my-library",
-  "languages": ["python"],
-  "packages": {
-    "pypi": ["my-library"],
-    "npm": []
-  },
+  "description": "A brief description of what the library does.",
+  "llms_txt_url": "https://docs.example.com/llms.txt",
   "aliases": ["mylib"],
-  "llms_txt_url": "https://docs.example.com/llms.txt"
+  "packages": [
+    {
+      "ecosystem": "pypi",
+      "languages": ["python"],
+      "package_names": ["my-library"],
+      "readme_url": "https://raw.githubusercontent.com/org/my-library/main/README.md",
+      "repo_url": "https://github.com/org/my-library"
+    }
+  ]
 }
 ```
 
 **Required fields:** `id`, `name`, `llms_txt_url`
-
-**Optional fields:** `description`, `docs_url`, `repo_url`
 
 **`id` rules:** lowercase, alphanumeric, hyphens and underscores only, must start with a letter or digit — e.g. `langchain`, `openai`, `react`
 
@@ -73,60 +73,12 @@ uv run scripts/validate.py all --urls
 
 ## Field Reference
 
-### `description`
-A brief, human-readable summary of what the library does. Optional — if present, must be a non-empty string.
+See **[registry-schema.md](registry-schema.md)** for the complete field reference, including:
 
-```json
-"description": "Data validation using Python type annotations"
-```
-
-### `docs_url`
-The standard documentation URL for the library — the human-readable docs site provided by the maintainers. This is **not** the `llms.txt` URL.
-
-```json
-"docs_url": "https://docs.pydantic.dev"
-```
-
-### `repo_url`
-The URL of the library's **source code repository** (e.g. GitHub, GitLab).
-
-```json
-"repo_url": "https://github.com/pydantic/pydantic"
-```
-
-### `languages`
-List only the languages relevant to the **content of the `llms_txt_url`** — not every language the library might support in theory.
-
-- If the `llms.txt` covers Python usage → `["python"]`
-- If the `llms.txt` covers both JavaScript and TypeScript → `["javascript", "typescript"]`
-- Do not add a language just because a binding or wrapper exists elsewhere
-
-```json
-// Python library
-"languages": ["python"]
-
-// JS/TS library
-"languages": ["javascript", "typescript"]
-```
-
-### `packages`
-List the installable package names users would use to install the library. Only include packages that are genuinely part of this entry's `llms.txt` coverage.
-
-**Package names must exactly match the name on the package host** — use the name as it appears on [pypi.org](https://pypi.org) for `pypi` entries and on [npmjs.com](https://npmjs.com) for `npm` entries. Do not use import names, aliases, or shorthand.
-
-```json
-// PyPI only — names must match pypi.org exactly
-"packages": { "pypi": ["langchain", "langchain-core", "langchain-community"], "npm": [] }
-
-// npm only — names must match npmjs.com exactly (including scope)
-"packages": { "pypi": [], "npm": ["react", "react-dom"] }
-
-// scoped npm package
-"packages": { "pypi": [], "npm": ["@anthropic-ai/sdk"] }
-
-// both registries
-"packages": { "pypi": ["grpcio"], "npm": ["@grpc/grpc-js"] }
-```
+- Library-level fields (`id`, `name`, `description`, `llms_txt_url`, `aliases`, `packages`)
+- `PackageEntry` fields (`ecosystem`, `languages`, `package_names`, `readme_url`, `repo_url`)
+- Valid `ecosystem` values (`"pypi"`, `"npm"`, `"conda"`, `"jsr"`)
+- The `resolve_library` response format
 
 ---
 
@@ -146,17 +98,20 @@ A single `llms.txt` often covers an entire ecosystem of related packages (e.g. a
 
 ### Examples
 
-**Correct — grouped (same `llms.txt`):**
+**Correct — grouped (same `llms.txt`, multiple packages):**
 ```json
 {
-  "id": "langchain",
-  "name": "LangChain",
+  "id": "langchain-python",
+  "name": "LangChain (Python)",
   "llms_txt_url": "https://docs.langchain.com/llms.txt",
-  "packages": {
-    "pypi": ["langchain", "langchain-core", "langchain-community", "langchain-openai"],
-    "npm": []
-  },
-  "languages": ["python"]
+  "packages": [
+    {
+      "ecosystem": "pypi",
+      "languages": ["python"],
+      "package_names": ["langchain", "langchain-core", "langchain-community", "langchain-openai"],
+      "repo_url": "https://github.com/langchain-ai/langchain"
+    }
+  ]
 }
 ```
 
@@ -164,21 +119,33 @@ A single `llms.txt` often covers an entire ecosystem of related packages (e.g. a
 
 ---
 
-**Correct — separate (different `llms.txt`):**
+**Correct — separate entries (different `llms.txt`):**
 ```json
 {
   "id": "react",
   "name": "React",
   "llms_txt_url": "https://react.dev/llms.txt",
-  "languages": ["javascript", "typescript"]
+  "packages": [
+    {
+      "ecosystem": "npm",
+      "languages": ["javascript", "typescript"],
+      "package_names": ["react", "react-dom"]
+    }
+  ]
 }
 ```
 ```json
 {
-  "id": "nextjs",
+  "id": "next-js",
   "name": "Next.js",
   "llms_txt_url": "https://nextjs.org/docs/llms.txt",
-  "languages": ["javascript", "typescript"]
+  "packages": [
+    {
+      "ecosystem": "npm",
+      "languages": ["javascript", "typescript"],
+      "package_names": ["next"]
+    }
+  ]
 }
 ```
 
@@ -192,13 +159,13 @@ React and Next.js each have their own `llms.txt`, so they get their own entries.
 { "id": "langchain-openai", "llms_txt_url": "https://docs.langchain.com/llms.txt" }
 ```
 
-These duplicate the same `llms.txt` and should instead be listed as packages under the `langchain` entry.
+These duplicate the same `llms.txt` and should instead be listed as `package_names` under the `langchain-python` entry.
 
 ---
 
 ### Same library, separate per-language documentation
 
-Some libraries publish independent `llms.txt` files for each language (e.g. a Python SDK and a JavaScript SDK with separate docs sites). In that case, create one entry per language and append a language shorthand to the `id`:
+Some libraries publish independent `llms.txt` files for each language SDK. In that case, create one entry per language and append a language shorthand to the `id`:
 
 | Language | Shorthand |
 |----------|-----------|
@@ -217,26 +184,39 @@ Some libraries publish independent `llms.txt` files for each language (e.g. a Py
 **Example — a library with distinct Python and JS docs:**
 ```json
 {
-  "id": "langchain-python",
-  "name": "LangChain (Python)",
-  "llms_txt_url": "https://docs.langchain.com/llms.txt",
-  "languages": ["python"],
-  "packages": { "pypi": ["langchain", "langchain-core"], "npm": [] },
-  "aliases": ["langchain"]
+  "id": "openai-python",
+  "name": "OpenAI SDK (Python)",
+  "llms_txt_url": "https://platform.openai.com/llms.txt",
+  "aliases": ["openai-sdk"],
+  "packages": [
+    {
+      "ecosystem": "pypi",
+      "languages": ["python"],
+      "package_names": ["openai"],
+      "readme_url": "https://raw.githubusercontent.com/openai/openai-python/main/README.md",
+      "repo_url": "https://github.com/openai/openai-python"
+    }
+  ]
 }
 ```
 ```json
 {
-  "id": "langchain-js",
-  "name": "LangChain (JS)",
-  "llms_txt_url": "https://js.langchain.com/llms.txt",
-  "languages": ["javascript", "typescript"],
-  "packages": { "pypi": [], "npm": ["langchain"] },
-  "aliases": []
+  "id": "openai-js",
+  "name": "OpenAI SDK (JavaScript)",
+  "llms_txt_url": "https://platform.openai.com/llms.txt",
+  "packages": [
+    {
+      "ecosystem": "npm",
+      "languages": ["javascript", "typescript"],
+      "package_names": ["openai"],
+      "readme_url": "https://raw.githubusercontent.com/openai/openai-node/main/README.md",
+      "repo_url": "https://github.com/openai/openai-node"
+    }
+  ]
 }
 ```
 
-Do **not** use this pattern when both languages are covered by the same `llms.txt` — use a single entry with both languages listed instead.
+Do **not** use this pattern when both languages are covered by the same `llms.txt` — use a single entry with two `packages` array items instead.
 
 ---
 
@@ -258,4 +238,3 @@ uv run scripts/validate.py all
 2. Make your changes following the steps above.
 3. Run `uv run scripts/validate.py all` and confirm it exits cleanly.
 4. Open a pull request with a short description of what you added or changed and why.
-

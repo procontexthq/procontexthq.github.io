@@ -2,10 +2,12 @@
 """
 ProContext Registry — validation and checksum management.
 
+Schema reference: registry-schema.md
+
 Usage:
-    uv run scripts/validate.py validate              # fast schema check (rules 1–20)
-    uv run scripts/validate.py validate --urls       # + URL reachability (rule 21)
-    uv run scripts/validate.py validate --pypi       # + PyPI package existence (rule 22)
+    uv run scripts/validate.py validate              # fast schema check (rules 1–21)
+    uv run scripts/validate.py validate --urls       # + URL reachability (rule 22)
+    uv run scripts/validate.py validate --pypi       # + PyPI package existence (rule 23)
     uv run scripts/validate.py checksum              # compute & update checksum only
     uv run scripts/validate.py all                   # validate then update checksum
     uv run scripts/validate.py all --urls --pypi     # everything
@@ -33,12 +35,12 @@ METADATA_FILE = REPO_ROOT / "docs" / "registry_metadata.json"
 FAILED_URLS_FILE = REPO_ROOT / "data" / "failed_url_checks.json"
 
 # --------------------------------------------------------------------------- #
-# Constants
+# Constants — see registry-schema.md for field definitions
 # --------------------------------------------------------------------------- #
 
-KNOWN_FIELDS = frozenset(
-    {"id", "name", "description", "docs_url", "repo_url", "languages", "packages", "aliases", "llms_txt_url"}
-)
+KNOWN_FIELDS = frozenset({"id", "name", "description", "llms_txt_url", "aliases", "packages"})
+KNOWN_PACKAGE_ENTRY_FIELDS = frozenset({"ecosystem", "languages", "package_names", "readme_url", "repo_url"})
+VALID_ECOSYSTEMS = frozenset({"pypi", "npm", "conda", "jsr"})
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 
 # --------------------------------------------------------------------------- #
@@ -58,7 +60,7 @@ class ValidationError:
 
 
 # --------------------------------------------------------------------------- #
-# File-level validation (rules 18–20)
+# File-level validation (rules 19–21)
 # --------------------------------------------------------------------------- #
 
 
@@ -66,31 +68,31 @@ def validate_file(path: Path) -> tuple[list[Any] | None, list[ValidationError]]:
     """Parse JSON and validate top-level structure. Returns (libraries, errors)."""
     errors: list[ValidationError] = []
 
-    # Rule 18: valid JSON
+    # Rule 19: valid JSON
     try:
         with open(path, "rb") as f:
             raw = f.read()
         libraries = json.loads(raw)
     except json.JSONDecodeError as exc:
-        errors.append(ValidationError(18, None, f"Invalid JSON: {exc}"))
+        errors.append(ValidationError(19, None, f"Invalid JSON: {exc}"))
         return None, errors
 
-    # Rule 19: top-level is an array
+    # Rule 20: top-level is an array
     if not isinstance(libraries, list):
         errors.append(
-            ValidationError(19, None, f"Top-level must be an array, got {type(libraries).__name__}")
+            ValidationError(20, None, f"Top-level must be an array, got {type(libraries).__name__}")
         )
         return None, errors
 
-    # Rule 20: array is non-empty
+    # Rule 21: array is non-empty
     if not libraries:
-        errors.append(ValidationError(20, None, "Array must not be empty"))
+        errors.append(ValidationError(21, None, "Array must not be empty"))
 
     return libraries, errors
 
 
 # --------------------------------------------------------------------------- #
-# Per-entry and cross-entry validation (rules 1–17)
+# Per-entry and cross-entry validation (rules 1–18)
 # --------------------------------------------------------------------------- #
 
 
@@ -108,45 +110,40 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
     errors: list[ValidationError] = []
 
     # Cross-entry tracking
-    seen_ids: dict[str, int] = {}        # id -> entry index
-    seen_pypi: dict[str, str] = {}       # package -> entry id
-    seen_npm: dict[str, str] = {}        # package -> entry id
-    seen_aliases: dict[str, str] = {}    # alias -> entry id
+    seen_ids: dict[str, int] = {}                       # id -> entry index
+    seen_packages: dict[str, dict[str, str]] = {}       # ecosystem -> {package_name -> entry_id}
+    seen_aliases: dict[str, str] = {}                   # alias -> entry id
 
     for i, entry in enumerate(libraries):
         if not isinstance(entry, dict):
             errors.append(ValidationError(1, None, f"Entry at index {i} is not an object"))
             continue
 
-        # Resolve a display id for error messages before we validate id itself
         raw_id = entry.get("id")
         display_id = raw_id if isinstance(raw_id, str) and raw_id else f"<index {i}>"
 
         # ------------------------------------------------------------------- #
-        # Rule 1: id is present and non-empty string
+        # Rule 1: id present and non-empty  /  Rule 2: id matches pattern
         # ------------------------------------------------------------------- #
         if not isinstance(raw_id, str) or not raw_id.strip():
             errors.append(ValidationError(1, display_id, "id is missing or empty"))
         else:
-            display_id = raw_id  # confirmed valid string
-            # Rule 2: id matches pattern
+            display_id = raw_id
             if not ID_PATTERN.match(raw_id):
                 errors.append(
-                    ValidationError(
-                        2, display_id, f"id {raw_id!r} does not match ^[a-z0-9][a-z0-9_-]*$"
-                    )
+                    ValidationError(2, display_id, f"id {raw_id!r} does not match ^[a-z0-9][a-z0-9_-]*$")
                 )
 
         # ------------------------------------------------------------------- #
-        # Rule 3: name is present and non-empty string
+        # Rule 3: name present and non-empty
         # ------------------------------------------------------------------- #
         name = entry.get("name")
         if not isinstance(name, str) or not name.strip():
             errors.append(ValidationError(3, display_id, "name is missing or empty"))
 
         # ------------------------------------------------------------------- #
-        # Rule 4: llms_txt_url is present and non-empty string
-        # Rule 5: llms_txt_url starts with https://
+        # Rule 4: llms_txt_url present and non-empty
+        # Rule 5: llms_txt_url is a valid https:// URL
         # ------------------------------------------------------------------- #
         llms_url = entry.get("llms_txt_url")
         if not isinstance(llms_url, str) or not llms_url.strip():
@@ -157,143 +154,160 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
             )
 
         # ------------------------------------------------------------------- #
-        # Rule 6: docs_url, if present, is a valid URL
-        # ------------------------------------------------------------------- #
-        if "docs_url" in entry and entry["docs_url"] is not None:
-            if not _is_valid_url(entry["docs_url"]):
-                errors.append(
-                    ValidationError(6, display_id, f"docs_url is not a valid URL: {entry['docs_url']!r}")
-                )
-
-        # ------------------------------------------------------------------- #
-        # Rule 7: repo_url, if present, is a valid URL
-        # ------------------------------------------------------------------- #
-        if "repo_url" in entry and entry["repo_url"] is not None:
-            if not _is_valid_url(entry["repo_url"]):
-                errors.append(
-                    ValidationError(7, display_id, f"repo_url is not a valid URL: {entry['repo_url']!r}")
-                )
-
-        # ------------------------------------------------------------------- #
-        # Rule 8: description, if present, is a non-empty string
+        # Rule 6: description, if present, is a non-empty string
         # ------------------------------------------------------------------- #
         if "description" in entry and entry["description"] is not None:
             if not isinstance(entry["description"], str) or not entry["description"].strip():
-                errors.append(
-                    ValidationError(8, display_id, "description must be a non-empty string")
-                )
+                errors.append(ValidationError(6, display_id, "description must be a non-empty string"))
 
         # ------------------------------------------------------------------- #
-        # Rule 9: languages is a list of strings (not null, not a bare string)
-        # ------------------------------------------------------------------- #
-        languages = entry.get("languages")
-        if not isinstance(languages, list) or not all(isinstance(l, str) for l in languages):
-            errors.append(
-                ValidationError(
-                    9,
-                    display_id,
-                    f"languages must be a list of strings, got {type(languages).__name__}",
-                )
-            )
-
-        # ------------------------------------------------------------------- #
-        # Rule 10: packages.pypi is a list of strings
-        # Rule 11: packages.npm is a list of strings
-        # ------------------------------------------------------------------- #
-        packages = entry.get("packages", {})
-        if not isinstance(packages, dict):
-            errors.append(ValidationError(10, display_id, "packages must be an object"))
-            pypi_list: list = []
-            npm_list: list = []
-        else:
-            pypi_list = packages.get("pypi", [])
-            npm_list = packages.get("npm", [])
-            if not isinstance(pypi_list, list) or not all(isinstance(p, str) for p in pypi_list):
-                errors.append(
-                    ValidationError(10, display_id, "packages.pypi must be a list of strings")
-                )
-                pypi_list = []
-            if not isinstance(npm_list, list) or not all(isinstance(p, str) for p in npm_list):
-                errors.append(
-                    ValidationError(11, display_id, "packages.npm must be a list of strings")
-                )
-                npm_list = []
-
-        # ------------------------------------------------------------------- #
-        # Rule 12: aliases is a list of strings
+        # Rule 7: aliases is a list of strings
         # ------------------------------------------------------------------- #
         aliases = entry.get("aliases", [])
         if not isinstance(aliases, list) or not all(isinstance(a, str) for a in aliases):
-            errors.append(
-                ValidationError(12, display_id, "aliases must be a list of strings")
-            )
+            errors.append(ValidationError(7, display_id, "aliases must be a list of strings"))
             aliases = []
 
         # ------------------------------------------------------------------- #
-        # Rule 13: no unknown fields
+        # Rule 8: packages is an array (not a dict)
+        # ------------------------------------------------------------------- #
+        packages = entry.get("packages", [])
+        if not isinstance(packages, list):
+            errors.append(
+                ValidationError(
+                    8,
+                    display_id,
+                    f"packages must be an array of PackageEntry objects, got {type(packages).__name__} "
+                    f"— see registry-schema.md",
+                )
+            )
+            packages = []
+
+        # ------------------------------------------------------------------- #
+        # Rule 9: no unknown library-level fields
         # ------------------------------------------------------------------- #
         unknown = set(entry.keys()) - KNOWN_FIELDS
         if unknown:
             errors.append(
-                ValidationError(13, display_id, f"Unknown field(s): {sorted(unknown)} — did you mean aliases/docs_url/repo_url?")
+                ValidationError(
+                    9,
+                    display_id,
+                    f"Unknown field(s): {sorted(unknown)} — see registry-schema.md for valid fields",
+                )
             )
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 14 — duplicate IDs
+        # PackageEntry validation (rules 10–15)
+        # ------------------------------------------------------------------- #
+        pkg_names_by_ecosystem: dict[str, list[str]] = {}
+
+        for j, pkg_entry in enumerate(packages):
+            if not isinstance(pkg_entry, dict):
+                errors.append(ValidationError(10, display_id, f"packages[{j}] is not an object"))
+                continue
+
+            pkg_label = f"packages[{j}]"
+
+            # Rule 10: ecosystem is a valid enum value
+            ecosystem = pkg_entry.get("ecosystem")
+            if ecosystem not in VALID_ECOSYSTEMS:
+                errors.append(
+                    ValidationError(
+                        10,
+                        display_id,
+                        f"{pkg_label}.ecosystem must be one of {sorted(VALID_ECOSYSTEMS)}, got {ecosystem!r}",
+                    )
+                )
+                ecosystem = None
+
+            # Rule 11: package_names is a list of strings
+            pkg_names = pkg_entry.get("package_names", [])
+            if not isinstance(pkg_names, list) or not all(isinstance(p, str) for p in pkg_names):
+                errors.append(
+                    ValidationError(11, display_id, f"{pkg_label}.package_names must be a list of strings")
+                )
+                pkg_names = []
+
+            # Rule 12: languages, if present, is a list of strings
+            langs = pkg_entry.get("languages")
+            if langs is not None:
+                if not isinstance(langs, list) or not all(isinstance(l, str) for l in langs):
+                    errors.append(
+                        ValidationError(12, display_id, f"{pkg_label}.languages must be a list of strings")
+                    )
+
+            # Rule 13: readme_url, if present, is a valid URL
+            if "readme_url" in pkg_entry and pkg_entry["readme_url"] is not None:
+                if not _is_valid_url(pkg_entry["readme_url"]):
+                    errors.append(
+                        ValidationError(
+                            13,
+                            display_id,
+                            f"{pkg_label}.readme_url is not a valid URL: {pkg_entry['readme_url']!r}",
+                        )
+                    )
+
+            # Rule 14: repo_url, if present, is a valid URL
+            if "repo_url" in pkg_entry and pkg_entry["repo_url"] is not None:
+                if not _is_valid_url(pkg_entry["repo_url"]):
+                    errors.append(
+                        ValidationError(
+                            14,
+                            display_id,
+                            f"{pkg_label}.repo_url is not a valid URL: {pkg_entry['repo_url']!r}",
+                        )
+                    )
+
+            # Rule 15: no unknown PackageEntry fields
+            unknown_pkg = set(pkg_entry.keys()) - KNOWN_PACKAGE_ENTRY_FIELDS
+            if unknown_pkg:
+                errors.append(
+                    ValidationError(
+                        15,
+                        display_id,
+                        f"{pkg_label} has unknown field(s): {sorted(unknown_pkg)}",
+                    )
+                )
+
+            # Collect for cross-entry duplicate checks
+            if ecosystem and pkg_names:
+                pkg_names_by_ecosystem.setdefault(ecosystem, []).extend(pkg_names)
+
+        # ------------------------------------------------------------------- #
+        # Cross-entry: Rule 16 — duplicate IDs
         # ------------------------------------------------------------------- #
         if isinstance(raw_id, str) and raw_id:
             if raw_id in seen_ids:
                 errors.append(
-                    ValidationError(
-                        14,
-                        display_id,
-                        f"Duplicate id {raw_id!r} (also at index {seen_ids[raw_id]})",
-                    )
+                    ValidationError(16, display_id, f"Duplicate id {raw_id!r} (also at index {seen_ids[raw_id]})")
                 )
             else:
                 seen_ids[raw_id] = i
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 15 — duplicate PyPI package names
+        # Cross-entry: Rule 17 — duplicate package names within an ecosystem
         # ------------------------------------------------------------------- #
-        for pkg in pypi_list:
-            if pkg in seen_pypi:
-                errors.append(
-                    ValidationError(
-                        15,
-                        display_id,
-                        f"PyPI package {pkg!r} is already listed under {seen_pypi[pkg]!r}",
+        for ecosystem, names in pkg_names_by_ecosystem.items():
+            eco_seen = seen_packages.setdefault(ecosystem, {})
+            for pkg_name in names:
+                if pkg_name in eco_seen:
+                    errors.append(
+                        ValidationError(
+                            17,
+                            display_id,
+                            f"{ecosystem} package {pkg_name!r} already listed under {eco_seen[pkg_name]!r}",
+                        )
                     )
-                )
-            else:
-                seen_pypi[pkg] = display_id
+                else:
+                    eco_seen[pkg_name] = display_id
 
         # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 16 — duplicate npm package names
-        # ------------------------------------------------------------------- #
-        for pkg in npm_list:
-            if pkg in seen_npm:
-                errors.append(
-                    ValidationError(
-                        16,
-                        display_id,
-                        f"npm package {pkg!r} is already listed under {seen_npm[pkg]!r}",
-                    )
-                )
-            else:
-                seen_npm[pkg] = display_id
-
-        # ------------------------------------------------------------------- #
-        # Cross-entry: Rule 17 — duplicate aliases
+        # Cross-entry: Rule 18 — duplicate aliases
         # ------------------------------------------------------------------- #
         for alias in aliases:
             if alias in seen_aliases:
                 errors.append(
-                    ValidationError(
-                        17,
-                        display_id,
-                        f"Alias {alias!r} is already used by {seen_aliases[alias]!r}",
-                    )
+                    ValidationError(18, display_id, f"Alias {alias!r} already used by {seen_aliases[alias]!r}")
                 )
             else:
                 seen_aliases[alias] = display_id
@@ -307,7 +321,7 @@ def validate_libraries(libraries: list[Any]) -> list[ValidationError]:
 
 
 def check_urls(libraries: list[Any]) -> list[ValidationError]:
-    """Rule 21: llms_txt_url is reachable (HTTP 200). Runs in parallel."""
+    """Rule 22: llms_txt_url is reachable (HTTP 200). Runs in parallel."""
     import httpx
 
     errors: list[ValidationError] = []
@@ -320,14 +334,11 @@ def check_urls(libraries: list[Any]) -> list[ValidationError]:
         try:
             resp = httpx.head(url, follow_redirects=True, timeout=10)
             if resp.status_code not in (200, 405):
-                # Some servers reject HEAD; fall back to GET
                 resp = httpx.get(url, follow_redirects=True, timeout=15)
             if resp.status_code != 200:
-                return ValidationError(
-                    21, eid, f"llms_txt_url returned HTTP {resp.status_code}: {url}"
-                )
+                return ValidationError(22, eid, f"llms_txt_url returned HTTP {resp.status_code}: {url}")
         except Exception as exc:
-            return ValidationError(21, eid, f"llms_txt_url unreachable ({exc}): {url}")
+            return ValidationError(22, eid, f"llms_txt_url unreachable ({exc}): {url}")
         return None
 
     entries = [e for e in libraries if isinstance(e, dict)]
@@ -340,34 +351,34 @@ def check_urls(libraries: list[Any]) -> list[ValidationError]:
 
 
 def check_pypi(libraries: list[Any]) -> list[ValidationError]:
-    """Rule 22: PyPI packages exist on pypi.org. Runs in parallel."""
+    """Rule 23: PyPI packages in package entries exist on pypi.org. Runs in parallel."""
     import httpx
 
     errors: list[ValidationError] = []
-
     targets: list[tuple[str, str]] = []
+
     for entry in libraries:
         if not isinstance(entry, dict):
             continue
         eid = entry.get("id", "<unknown>")
-        packages = entry.get("packages", {})
-        if isinstance(packages, dict):
-            for pkg in packages.get("pypi", []):
-                if isinstance(pkg, str):
-                    targets.append((eid, pkg))
+        packages = entry.get("packages", [])
+        if isinstance(packages, list):
+            for pkg_entry in packages:
+                if isinstance(pkg_entry, dict) and pkg_entry.get("ecosystem") == "pypi":
+                    for pkg in pkg_entry.get("package_names", []):
+                        if isinstance(pkg, str):
+                            targets.append((eid, pkg))
 
     def _check(args: tuple[str, str]) -> ValidationError | None:
         eid, pkg = args
         try:
             resp = httpx.get(f"https://pypi.org/pypi/{pkg}/json", timeout=10)
             if resp.status_code == 404:
-                return ValidationError(22, eid, f"PyPI package {pkg!r} not found on pypi.org")
+                return ValidationError(23, eid, f"PyPI package {pkg!r} not found on pypi.org")
             if resp.status_code != 200:
-                return ValidationError(
-                    22, eid, f"PyPI package {pkg!r} returned HTTP {resp.status_code}"
-                )
+                return ValidationError(23, eid, f"PyPI package {pkg!r} returned HTTP {resp.status_code}")
         except Exception as exc:
-            return ValidationError(22, eid, f"PyPI check failed for {pkg!r}: {exc}")
+            return ValidationError(23, eid, f"PyPI check failed for {pkg!r}: {exc}")
         return None
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
@@ -384,8 +395,8 @@ def check_pypi(libraries: list[Any]) -> list[ValidationError]:
 
 
 def append_failed_url_entries(libraries: list[Any], url_errors: list[ValidationError]) -> None:
-    """Append entries that failed Rule 21 to FAILED_URLS_FILE (deduplicates by id)."""
-    failed_ids = {err.entry_id for err in url_errors if err.rule == 21 and err.entry_id}
+    """Append entries that failed Rule 22 to FAILED_URLS_FILE (deduplicates by id)."""
+    failed_ids = {err.entry_id for err in url_errors if err.rule == 22 and err.entry_id}
     if not failed_ids:
         return
 
@@ -515,9 +526,9 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 examples:
-  uv run scripts/validate.py validate              fast schema check (rules 1-20)
-  uv run scripts/validate.py validate --urls       + URL reachability (rule 21)
-  uv run scripts/validate.py validate --pypi       + PyPI package existence (rule 22)
+  uv run scripts/validate.py validate              fast schema check (rules 1-21)
+  uv run scripts/validate.py validate --urls       + URL reachability (rule 22)
+  uv run scripts/validate.py validate --pypi       + PyPI package existence (rule 23)
   uv run scripts/validate.py checksum              compute & update checksum only
   uv run scripts/validate.py all                   validate then update checksum
   uv run scripts/validate.py all --urls --pypi     run everything
@@ -527,13 +538,13 @@ examples:
 
     # validate
     p_validate = subparsers.add_parser(
-        "validate", help="Validate registry structure (rules 1–20 always; 21–22 optional)"
+        "validate", help="Validate registry structure (rules 1–21 always; 22–23 optional)"
     )
     p_validate.add_argument(
-        "--urls", action="store_true", help="Also check URL reachability (rule 21, slow)"
+        "--urls", action="store_true", help="Also check URL reachability (rule 22, slow)"
     )
     p_validate.add_argument(
-        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 22, slow)"
+        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 23, slow)"
     )
     p_validate.set_defaults(func=cmd_validate)
 
@@ -548,10 +559,10 @@ examples:
         "all", help="Validate structure then update checksum (aborts on errors)"
     )
     p_all.add_argument(
-        "--urls", action="store_true", help="Also check URL reachability (rule 21, slow)"
+        "--urls", action="store_true", help="Also check URL reachability (rule 22, slow)"
     )
     p_all.add_argument(
-        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 22, slow)"
+        "--pypi", action="store_true", help="Also verify PyPI packages exist (rule 23, slow)"
     )
     p_all.set_defaults(func=cmd_all)
 
