@@ -35,5 +35,3 @@ Every time `known-libraries.json` is modified:
    "
    ```
 2. Update `checksum` in `docs/registry_metadata.json` and Bump `version` (use today's date: `YYYY-MM-DD`, or append `-N` for multiple releases in a day). You can also use `uv run scripts/validate.py checksum` to auto updte. Refer to [README](README.md) for detailed instructions.
-
-4. Validate all new `llms_txt_url` values are reachable before committing.

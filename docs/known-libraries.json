@@ -5583,9 +5583,9 @@
     ]
   },
   {
-    "id": "langchain-python",
-    "name": "LangChain (Python)",
-    "description": "The Python framework for building LLM-powered applications, offering chains, agents, and retrieval strategies with support for various LLM providers.",
+    "id": "langchain",
+    "name": "LangChain",
+    "description": "The framework for building LLM-powered applications, offering chains, agents, and retrieval strategies with support for various LLM providers.",
     "llms_txt_url": "https://docs.langchain.com/llms.txt",
     "aliases": [
       "langchain",
@@ -5604,19 +5604,7 @@
         ],
         "readme_url": "https://raw.githubusercontent.com/langchain-ai/langchain/master/README.md",
         "repo_url": "https://github.com/langchain-ai/langchain"
-      }
-    ]
-  },
-  {
-    "id": "langchain-js",
-    "name": "LangChain (JavaScript)",
-    "description": "The JavaScript/TypeScript framework for building LLM-powered applications, offering chains, agents, and retrieval strategies with support for various LLM providers.",
-    "llms_txt_url": "https://docs.langchain.com/llms.txt",
-    "aliases": [
-      "langchainjs",
-      "langchain-javascript"
-    ],
-    "packages": [
+      },
       {
         "ecosystem": "npm",
         "languages": [
