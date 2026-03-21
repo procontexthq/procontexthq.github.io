@@ -29,3 +29,6 @@ uv.lock
 
 # Local tooling output
 data/
+
+# Private notes (not for public eyes)
+CLAUDE.local.md
