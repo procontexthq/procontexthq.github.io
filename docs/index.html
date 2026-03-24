@@ -16,6 +16,12 @@
     }
     h1 { font-size: 1.4rem; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
     h1 img { width: 28px; height: 28px; }
+    .library-count {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: -8px 0 20px;
+      color: #111;
+    }
     ul { list-style: none; padding: 0; margin: 0; }
     li { padding: 8px 0; border-bottom: 1px solid #eee; }
     .name { font-weight: 600; }
@@ -27,6 +33,7 @@
 </head>
 <body>
   <h1><img src="favicon.svg" alt="pX">ProContext Live Registry List</h1>
+  <div class="library-count" id="library-count">Total libraries: Loading...</div>
   <div class="meta" id="meta"></div>
   <ul id="list"></ul>
   <script>
@@ -43,8 +50,8 @@
     fetch("known-libraries.json")
       .then(r => r.json())
       .then(libs => {
-        const metaEl = document.getElementById("meta");
-        metaEl.innerHTML += "<br><span>Libraries:</span> " + libs.length;
+        const countEl = document.getElementById("library-count");
+        countEl.textContent = "Total libraries: " + libs.length;
         const ul = document.getElementById("list");
         libs.forEach(lib => {
           const li = document.createElement("li");
