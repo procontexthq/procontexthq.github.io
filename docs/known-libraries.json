@@ -20,10 +20,7 @@
     "name": "Ant Design",
     "description": "An enterprise-class UI design language and React UI library with a set of high-quality React components, one of best React UI library for enterprises.",
     "llms_txt_url": "https://ant.design/llms.txt",
-    "aliases": [
-      "ant",
-      "design"
-    ],
+    "aliases": ["ant", "design"],
     "packages": [],
     "llms_full_txt_url": "https://ant.design/llms-full.txt"
   },
@@ -47,24 +44,15 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "anthropic"
-        ],
+        "languages": ["python"],
+        "package_names": ["anthropic"],
         "readme_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/README.md",
         "repo_url": "https://github.com/anthropics/anthropic-sdk-python"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@anthropic-ai/sdk"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@anthropic-ai/sdk"],
         "readme_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/README.md",
         "repo_url": "https://github.com/anthropics/anthropic-sdk-typescript"
       }
@@ -83,11 +71,7 @@
     "name": "Claude Code",
     "description": "Claude Code is a documentation agent created by Anthropic.",
     "llms_txt_url": "https://code.claude.com/docs/llms.txt",
-    "aliases": [
-      "claude",
-      "anthropic claude code",
-      "code"
-    ],
+    "aliases": ["claude", "anthropic claude code", "code"],
     "packages": []
   },
   {
@@ -104,9 +88,7 @@
     "name": "Ark UI",
     "description": "A headless UI library with over 45+ components designed to build reusable, scalable Design Systems that works for a wide range of JS frameworks.",
     "llms_txt_url": "https://ark-ui.com/llms.txt",
-    "aliases": [
-      "ark"
-    ],
+    "aliases": ["ark"],
     "packages": [],
     "llms_full_txt_url": "https://ark-ui.com/llms-full.txt"
   },
@@ -143,10 +125,7 @@
     "name": "Axiom",
     "description": "Cloud-native observability and log management platform",
     "llms_txt_url": "https://axiom.co/docs/llms.txt",
-    "aliases": [
-      "axiom-analytics",
-      "axiom-logging"
-    ],
+    "aliases": ["axiom-analytics", "axiom-logging"],
     "llms_full_txt_url": "https://axiom.co/docs/llms-full.txt"
   },
   {
@@ -154,31 +133,19 @@
     "name": "BaseHub",
     "description": "Database and data infrastructure platform",
     "llms_txt_url": "https://docs.basehub.com/llms.txt",
-    "aliases": [
-      "basehub-cms"
-    ]
+    "aliases": ["basehub-cms"]
   },
   {
     "id": "better-auth",
     "name": "Better Auth",
     "description": "The most comprehensive authentication library for TypeScript.",
     "llms_txt_url": "https://www.better-auth.com/llms.txt",
-    "aliases": [
-      "better-auth-js",
-      "betterauth",
-      "better",
-      "auth"
-    ],
+    "aliases": ["better-auth-js", "betterauth", "better", "auth"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "better-auth"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["better-auth"],
         "readme_url": "https://raw.githubusercontent.com/better-auth/better-auth/main/README.md",
         "repo_url": "https://github.com/better-auth/better-auth"
       }
@@ -207,11 +174,7 @@
     "name": "Bun",
     "description": "Bun is a new JavaScript runtime with a native bundler, transpiler, task runner, and npm client built-in.",
     "llms_txt_url": "https://bun.sh/llms.txt",
-    "aliases": [
-      "bun-js",
-      "bun-runtime",
-      "bun-sh"
-    ],
+    "aliases": ["bun-js", "bun-runtime", "bun-sh"],
     "llms_full_txt_url": "https://bun.sh/llms-full.txt"
   },
   {
@@ -237,10 +200,7 @@
     "name": "Callback Technologies",
     "description": "Developer components for building virtual file systems, file security and monitoring tools, and file sharing solutions - all without writing driver-level code.",
     "llms_txt_url": "https://www.callback.com/llms.txt",
-    "aliases": [
-      "callback",
-      "technologies"
-    ],
+    "aliases": ["callback", "technologies"],
     "packages": []
   },
   {
@@ -248,19 +208,12 @@
     "name": "Chakra UI",
     "description": "Chakra UI is a component system for building products with speed",
     "llms_txt_url": "https://chakra-ui.com/llms.txt",
-    "aliases": [
-      "chakra"
-    ],
+    "aliases": ["chakra"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@chakra-ui/react"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@chakra-ui/react"],
         "readme_url": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/README.md",
         "repo_url": "https://github.com/chakra-ui/chakra-ui"
       }
@@ -280,10 +233,7 @@
     "name": "Clever Cloud",
     "description": "Cloud platform for application deployment and hosting",
     "llms_txt_url": "https://www.clever-cloud.com/developers/llms.txt",
-    "aliases": [
-      "clever",
-      "cloud"
-    ],
+    "aliases": ["clever", "cloud"],
     "packages": []
   },
   {
@@ -291,32 +241,18 @@
     "name": "Cloudflare",
     "description": "Make employees, applications and networks faster and more secure everywhere,' while reducing complexity and cost.",
     "llms_txt_url": "https://developers.cloudflare.com/llms.txt",
-    "aliases": [
-      "cloudflare-workers",
-      "wrangler",
-      "cf-workers"
-    ],
+    "aliases": ["cloudflare-workers", "wrangler", "cf-workers"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "cloudflare"
-        ],
+        "languages": ["python"],
+        "package_names": ["cloudflare"],
         "repo_url": "https://github.com/cloudflare/cloudflare-node"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "cloudflare",
-          "wrangler"
-        ]
+        "languages": ["javascript", "typescript"],
+        "package_names": ["cloudflare", "wrangler"]
       }
     ],
     "llms_full_txt_url": "https://developers.cloudflare.com/llms-full.txt"
@@ -335,10 +271,7 @@
     "name": "Coin Exchange",
     "description": "Ajaib Coin Exchange API documentation for developers & traders",
     "llms_txt_url": "https://ajaib.gitbook.io/coin-exchange/llms.txt",
-    "aliases": [
-      "coin",
-      "exchange"
-    ],
+    "aliases": ["coin", "exchange"],
     "packages": [],
     "llms_full_txt_url": "https://ajaib.gitbook.io/coin-exchange/llms-full.txt"
   },
@@ -356,10 +289,7 @@
     "name": "Commerce Layer",
     "description": "Commerce Layer is a headless commerce platform that makes it easy to sell your stock anywhere, even without a website. Start with Links today. Scale globally with our suite of APIs.",
     "llms_txt_url": "https://docs.commercelayer.io/core/llms.txt",
-    "aliases": [
-      "commerce",
-      "layer"
-    ],
+    "aliases": ["commerce", "layer"],
     "packages": [],
     "llms_full_txt_url": "https://docs.commercelayer.io/core/llms-full.txt"
   },
@@ -393,20 +323,12 @@
     "name": "CrewAI",
     "description": "AI-powered team collaboration platform",
     "llms_txt_url": "https://docs.crewai.com/llms.txt",
-    "aliases": [
-      "crewai-python",
-      "crew-ai"
-    ],
+    "aliases": ["crewai-python", "crew-ai"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "crewai",
-          "crewai-tools"
-        ],
+        "languages": ["python"],
+        "package_names": ["crewai", "crewai-tools"],
         "readme_url": "https://raw.githubusercontent.com/crewAIInc/crewAI/main/README.md",
         "repo_url": "https://github.com/crewAIInc/crewAI"
       }
@@ -418,10 +340,7 @@
     "name": "Deno Documentation",
     "description": "Guides, references, tutorials and examples for using Deno, the secure runtime for JavaScript and TypeScript.",
     "llms_txt_url": "https://docs.deno.com/llms.txt",
-    "aliases": [
-      "deno",
-      "documentation"
-    ],
+    "aliases": ["deno", "documentation"],
     "packages": [],
     "llms_full_txt_url": "https://docs.deno.com/llms-full.txt"
   },
@@ -460,34 +379,19 @@
     "name": "Docker Docs",
     "description": "Official Docker library of resources, manuals, and guides to help you containerize applications.",
     "llms_txt_url": "https://docs.docker.com/llms.txt",
-    "aliases": [
-      "docker",
-      "docker-compose",
-      "dockerfile",
-      "docs"
-    ]
+    "aliases": ["docker", "docker-compose", "dockerfile", "docs"]
   },
   {
     "id": "drizzle-orm",
     "name": "Drizzle ORM",
     "description": "Headless TypeScript ORM with a head. Runs on Node, Bun and Deno. Lives on the Edge and yes, it's a JavaScript ORM too.",
     "llms_txt_url": "https://orm.drizzle.team/llms.txt",
-    "aliases": [
-      "drizzle",
-      "drizzle-kit",
-      "orm"
-    ],
+    "aliases": ["drizzle", "drizzle-kit", "orm"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "drizzle-orm",
-          "drizzle-kit"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["drizzle-orm", "drizzle-kit"],
         "readme_url": "https://raw.githubusercontent.com/drizzle-team/drizzle-orm/main/README.md",
         "repo_url": "https://github.com/drizzle-team/drizzle-orm"
       }
@@ -508,32 +412,19 @@
     "name": "ElevenLabs",
     "description": "AI-powered voice synthesis platform",
     "llms_txt_url": "https://elevenlabs.io/docs/llms.txt",
-    "aliases": [
-      "eleven-labs",
-      "elevenlabs-python",
-      "elevenlabs-js"
-    ],
+    "aliases": ["eleven-labs", "elevenlabs-python", "elevenlabs-js"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "elevenlabs"
-        ],
+        "languages": ["python"],
+        "package_names": ["elevenlabs"],
         "readme_url": "https://raw.githubusercontent.com/ElevenLabs/elevenlabs-python/main/README.md",
         "repo_url": "https://github.com/elevenlabs/elevenlabs-python"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "elevenlabs"
-        ]
+        "languages": ["javascript", "typescript"],
+        "package_names": ["elevenlabs"]
       }
     ],
     "llms_full_txt_url": "https://elevenlabs.io/docs/llms-full.txt"
@@ -552,22 +443,12 @@
     "name": "Expo Documentation",
     "description": "Build one JavaScript/TypeScript project that runs natively on all your users devices.",
     "llms_txt_url": "https://docs.expo.dev/llms.txt",
-    "aliases": [
-      "expo",
-      "expo-router",
-      "react-native-expo",
-      "documentation"
-    ],
+    "aliases": ["expo", "expo-router", "react-native-expo", "documentation"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "expo"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["expo"],
         "readme_url": "https://raw.githubusercontent.com/expo/expo/main/README.md",
         "repo_url": "https://github.com/expo/expo"
       }
@@ -579,10 +460,7 @@
     "name": "Fabric",
     "description": "Fabric is a headless e-commerce platform providing APIs and infrastructure for building modern retail experiences.",
     "llms_txt_url": "https://developer.fabric.inc/llms.txt",
-    "aliases": [
-      "fabric inc",
-      "fabric ecommerce"
-    ],
+    "aliases": ["fabric inc", "fabric ecommerce"],
     "llms_full_txt_url": "https://developer.fabric.inc/llms-full.txt"
   },
   {
@@ -599,11 +477,7 @@
     "name": "Finch",
     "description": "Finch provides a universal API for employment systems, enabling developers to connect to HRIS and payroll providers with a single integration.",
     "llms_txt_url": "https://developer.tryfinch.com/llms.txt",
-    "aliases": [
-      "tryfinch",
-      "finch api",
-      "finch hris"
-    ],
+    "aliases": ["tryfinch", "finch api", "finch hris"],
     "llms_full_txt_url": "https://developer.tryfinch.com/llms-full.txt"
   },
   {
@@ -611,16 +485,11 @@
     "name": "Fireworks AI",
     "description": "Fireworks AI is a fast AI inference platform for deploying and running open-source LLMs and generative AI models at scale.",
     "llms_txt_url": "https://docs.fireworks.ai/llms.txt",
-    "aliases": [
-      "fireworks",
-      "fw-ai"
-    ],
+    "aliases": ["fireworks", "fw-ai"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "fireworks-ai"
-        ],
+        "package_names": ["fireworks-ai"],
         "repo_url": "https://github.com/fw-ai"
       }
     ],
@@ -631,10 +500,7 @@
     "name": "Flatfile",
     "description": "Flatfile is a data onboarding platform that provides AI-powered import experiences to help developers accept, transform, and validate customer data.",
     "llms_txt_url": "https://flatfile.com/docs/llms.txt",
-    "aliases": [
-      "flatfile import",
-      "flatfile data onboarding"
-    ],
+    "aliases": ["flatfile import", "flatfile data onboarding"],
     "packages": [
       {
         "ecosystem": "npm",
@@ -652,16 +518,11 @@
     "name": "Galileo",
     "description": "Galileo is an AI data quality and LLM evaluation platform for monitoring, debugging, and improving machine learning models and LLM applications.",
     "llms_txt_url": "https://docs.rungalileo.io/llms.txt",
-    "aliases": [
-      "rungalileo",
-      "galileo ai"
-    ],
+    "aliases": ["rungalileo", "galileo ai"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "galileo-sdk"
-        ],
+        "package_names": ["galileo-sdk"],
         "repo_url": "https://github.com/rungalileo"
       }
     ],
@@ -689,24 +550,17 @@
     "name": "Helicone",
     "description": "Helicone is an open-source LLM observability platform for logging, monitoring, and debugging AI applications.",
     "llms_txt_url": "https://www.helicone.ai/llms.txt",
-    "aliases": [
-      "helicone ai",
-      "helicone observability"
-    ],
+    "aliases": ["helicone ai", "helicone observability"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "helicone"
-        ],
+        "package_names": ["helicone"],
         "readme_url": "https://raw.githubusercontent.com/Helicone/helicone/main/README.md",
         "repo_url": "https://github.com/Helicone/helicone"
       },
       {
         "ecosystem": "npm",
-        "package_names": [
-          "helicone"
-        ]
+        "package_names": ["helicone"]
       }
     ]
   },
@@ -736,12 +590,8 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "accelerate"
-        ],
+        "languages": ["python"],
+        "package_names": ["accelerate"],
         "readme_url": "https://raw.githubusercontent.com/huggingface/accelerate/main/README.md",
         "repo_url": "https://github.com/huggingface/accelerate"
       }
@@ -764,12 +614,8 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "diffusers"
-        ],
+        "languages": ["python"],
+        "package_names": ["diffusers"],
         "readme_url": "https://raw.githubusercontent.com/huggingface/diffusers/main/README.md",
         "repo_url": "https://github.com/huggingface/diffusers"
       }
@@ -792,12 +638,8 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "huggingface_hub"
-        ],
+        "languages": ["python"],
+        "package_names": ["huggingface_hub"],
         "readme_url": "https://raw.githubusercontent.com/huggingface/huggingface_hub/main/README.md",
         "repo_url": "https://github.com/huggingface/huggingface_hub"
       }
@@ -820,12 +662,8 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "transformers"
-        ],
+        "languages": ["python"],
+        "package_names": ["transformers"],
         "readme_url": "https://raw.githubusercontent.com/huggingface/transformers/main/README.md",
         "repo_url": "https://github.com/huggingface/transformers"
       }
@@ -854,10 +692,7 @@
     "name": "Idapixl Cortex",
     "description": "Persistent cognitive infrastructure for AI agents \u2014 semantic memory graph, prediction-error gating, dream consolidation, belief tracking, and vitals. Accessible via A2A protocol and x402 micropayments.",
     "llms_txt_url": "https://idapixl.com/llms.txt",
-    "aliases": [
-      "idapixl",
-      "cortex"
-    ],
+    "aliases": ["idapixl", "cortex"],
     "packages": []
   },
   {
@@ -865,10 +700,7 @@
     "name": "Inkeep",
     "description": "Inkeep is an AI-powered search and support platform that turns your documentation into an intelligent assistant for users and support teams.",
     "llms_txt_url": "https://docs.inkeep.com/llms.txt",
-    "aliases": [
-      "inkeep ai",
-      "inkeep search"
-    ],
+    "aliases": ["inkeep ai", "inkeep search"],
     "llms_full_txt_url": "https://docs.inkeep.com/llms-full.txt"
   },
   {
@@ -894,17 +726,11 @@
     "name": "IonQ",
     "description": "IonQ is a quantum computing company providing access to trapped-ion quantum computers through cloud APIs and SDKs.",
     "llms_txt_url": "https://docs.ionq.com/llms.txt",
-    "aliases": [
-      "ionq quantum",
-      "ionq computing"
-    ],
+    "aliases": ["ionq quantum", "ionq computing"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "cirq-ionq",
-          "qiskit-ionq"
-        ],
+        "package_names": ["cirq-ionq", "qiskit-ionq"],
         "repo_url": "https://github.com/ionq-samples"
       }
     ],
@@ -915,12 +741,7 @@
     "name": "LM Studio",
     "description": "LM Studio is a desktop application for discovering, downloading, and running large language models locally on your computer.",
     "llms_txt_url": "https://lmstudio.ai/llms.txt",
-    "aliases": [
-      "lmstudio",
-      "lm studio local",
-      "lms",
-      "studio"
-    ],
+    "aliases": ["lmstudio", "lm studio local", "lms", "studio"],
     "llms_full_txt_url": "https://lmstudio.ai/llms-full.txt"
   },
   {
@@ -928,31 +749,18 @@
     "name": "LangChain",
     "description": "The framework for building LLM-powered applications, offering chains, agents, and retrieval strategies with support for various LLM providers.",
     "llms_txt_url": "https://docs.langchain.com/llms.txt",
-    "aliases": [
-      "langgraph",
-      "langfuse",
-      "llamaindex"
-    ],
+    "aliases": ["langgraph", "langfuse", "llamaindex"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "langchain",
-          "langchain-core",
-          "langchain-community"
-        ],
+        "languages": ["python"],
+        "package_names": ["langchain", "langchain-core", "langchain-community"],
         "readme_url": "https://raw.githubusercontent.com/langchain-ai/langchain/master/README.md",
         "repo_url": "https://github.com/langchain-ai/langchain"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
+        "languages": ["typescript", "javascript"],
         "package_names": [
           "langchain",
           "@langchain/core",
@@ -987,16 +795,11 @@
     "name": "Loops",
     "description": "Loops is an email platform built for SaaS companies, providing transactional and marketing email sending via API.",
     "llms_txt_url": "https://loops.so/docs/llms.txt",
-    "aliases": [
-      "loops.so",
-      "loops email"
-    ],
+    "aliases": ["loops.so", "loops email"],
     "packages": [
       {
         "ecosystem": "npm",
-        "package_names": [
-          "loops"
-        ]
+        "package_names": ["loops"]
       }
     ],
     "llms_full_txt_url": "https://loops.so/docs/llms-full.txt"
@@ -1014,23 +817,16 @@
     "name": "Mangopay",
     "description": "Mangopay is a payment infrastructure platform for marketplaces, platforms, and crowdfunding sites to manage funds and payments.",
     "llms_txt_url": "https://docs.mangopay.com/llms.txt",
-    "aliases": [
-      "mangopay api",
-      "mangopay payments"
-    ],
+    "aliases": ["mangopay api", "mangopay payments"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "mangopay"
-        ],
+        "package_names": ["mangopay"],
         "repo_url": "https://github.com/Mangopay"
       },
       {
         "ecosystem": "npm",
-        "package_names": [
-          "mangopay2-nodejs-sdk"
-        ]
+        "package_names": ["mangopay2-nodejs-sdk"]
       }
     ],
     "llms_full_txt_url": "https://docs.mangopay.com/llms-full.txt"
@@ -1063,22 +859,12 @@
     "name": "Medusa",
     "description": "Medusa is an open-source digital commerce platform with a built-in framework for customizations, supporting headless storefronts.",
     "llms_txt_url": "https://docs.medusajs.com/llms.txt",
-    "aliases": [
-      "medusajs",
-      "medusa commerce",
-      "medusa ecommerce"
-    ],
+    "aliases": ["medusajs", "medusa commerce", "medusa ecommerce"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@medusajs/medusa",
-          "@medusajs/medusa-js"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@medusajs/medusa", "@medusajs/medusa-js"],
         "readme_url": "https://raw.githubusercontent.com/medusajs/medusa/develop/README.md",
         "repo_url": "https://github.com/medusajs/medusa"
       }
@@ -1099,10 +885,7 @@
     "name": "Mintlify",
     "description": "Mintlify is a modern documentation platform that makes it easy to create beautiful developer docs from code and markdown.",
     "llms_txt_url": "https://mintlify.com/docs/llms.txt",
-    "aliases": [
-      "mintlify docs",
-      "mintlify documentation"
-    ],
+    "aliases": ["mintlify docs", "mintlify documentation"],
     "llms_full_txt_url": "https://www.mintlify.com/docs/llms-full.txt"
   },
   {
@@ -1125,17 +908,13 @@
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "mcp"
-        ],
+        "package_names": ["mcp"],
         "readme_url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/README.md",
         "repo_url": "https://github.com/modelcontextprotocol/modelcontextprotocol"
       },
       {
         "ecosystem": "npm",
-        "package_names": [
-          "@modelcontextprotocol/sdk"
-        ]
+        "package_names": ["@modelcontextprotocol/sdk"]
       }
     ],
     "llms_full_txt_url": "https://modelcontextprotocol.io/llms-full.txt"
@@ -1145,10 +924,7 @@
     "name": "MoonPay CLI",
     "description": "Give your AI agent a verified virtual account and 30+ pre-built financial skills. One command to get started.",
     "llms_txt_url": "https://agents.moonpay.com/llms.txt",
-    "aliases": [
-      "moonpay",
-      "cli"
-    ],
+    "aliases": ["moonpay", "cli"],
     "packages": []
   },
   {
@@ -1164,19 +940,12 @@
     "name": "Next.js",
     "description": "A React framework for production with hybrid static and server rendering, route pre-fetching, and built-in CSS support.",
     "llms_txt_url": "https://nextjs.org/docs/llms.txt",
-    "aliases": [
-      "next"
-    ],
+    "aliases": ["next"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "next"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["next"],
         "readme_url": "https://raw.githubusercontent.com/vercel/next.js/canary/readme.md",
         "repo_url": "https://github.com/vercel/next.js"
       }
@@ -1188,10 +957,7 @@
     "name": "Nile Postgres",
     "description": "Postgres re-engineered for multi-tenant apps. Build secure, scalable and AI-native multi-tenant applications with world-class developer experience.",
     "llms_txt_url": "https://www.thenile.dev/docs/llms.txt",
-    "aliases": [
-      "nile",
-      "postgres"
-    ],
+    "aliases": ["nile", "postgres"],
     "packages": [],
     "llms_full_txt_url": "https://www.thenile.dev/docs/llms-full.txt"
   },
@@ -1256,13 +1022,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "openai"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["openai"],
         "readme_url": "https://raw.githubusercontent.com/openai/openai-node/master/README.md",
         "repo_url": "https://github.com/openai/openai-node"
       }
@@ -1274,10 +1035,7 @@
     "name": "OpenPhone",
     "description": "OpenPhone is a modern business phone system providing shared phone numbers, messaging, and call management for teams.",
     "llms_txt_url": "https://www.openphone.com/docs/llms.txt",
-    "aliases": [
-      "openphone api",
-      "openphone business"
-    ],
+    "aliases": ["openphone api", "openphone business"],
     "llms_full_txt_url": "https://www.quo.com/docs/llms-full.txt"
   },
   {
@@ -1285,24 +1043,17 @@
     "name": "OpenPipe",
     "description": "OpenPipe is a platform for fine-tuning and deploying custom LLMs, helping developers replace expensive frontier models with cheaper specialized ones.",
     "llms_txt_url": "https://docs.openpipe.ai/llms.txt",
-    "aliases": [
-      "openpipe ai",
-      "openpipe fine-tuning"
-    ],
+    "aliases": ["openpipe ai", "openpipe fine-tuning"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "openpipe"
-        ],
+        "package_names": ["openpipe"],
         "readme_url": "https://raw.githubusercontent.com/OpenPipe/OpenPipe/main/README.md",
         "repo_url": "https://github.com/OpenPipe/OpenPipe"
       },
       {
         "ecosystem": "npm",
-        "package_names": [
-          "openpipe"
-        ]
+        "package_names": ["openpipe"]
       }
     ],
     "llms_full_txt_url": "https://docs.openpipe.ai/llms-full.txt"
@@ -1312,10 +1063,7 @@
     "name": "OpenRouter",
     "description": "OpenRouter is a unified API interface for accessing hundreds of LLMs from different providers with a single integration.",
     "llms_txt_url": "https://openrouter.ai/docs/llms.txt",
-    "aliases": [
-      "openrouter ai",
-      "open router"
-    ],
+    "aliases": ["openrouter ai", "open router"],
     "llms_full_txt_url": "https://openrouter.ai/docs/llms-full.txt"
   },
   {
@@ -1323,11 +1071,7 @@
     "name": "Opik by Comet",
     "description": "Comet provides an end-to-end model evaluation platform for AI developers, with best-in-class LLM evaluations, experiment tracking, and production monitoring.",
     "llms_txt_url": "https://www.comet.com/docs/opik/llms.txt",
-    "aliases": [
-      "opik",
-      "comet",
-      "opik comet"
-    ],
+    "aliases": ["opik", "comet", "opik comet"],
     "packages": []
   },
   {
@@ -1350,10 +1094,7 @@
     "name": "Oxla",
     "description": "Oxla is a high-performance distributed analytical database optimized for fast SQL queries on large datasets.",
     "llms_txt_url": "https://docs.oxla.com/llms.txt",
-    "aliases": [
-      "oxla database",
-      "oxla analytics"
-    ],
+    "aliases": ["oxla database", "oxla analytics"],
     "llms_full_txt_url": "https://docs.oxla.com/llms-full.txt"
   },
   {
@@ -1361,11 +1102,7 @@
     "name": "Perplexity",
     "description": "Perplexity is an AI-powered answer engine and search platform, also providing an API for building search-augmented AI applications.",
     "llms_txt_url": "https://docs.perplexity.ai/llms.txt",
-    "aliases": [
-      "perplexity ai",
-      "perplexity api",
-      "pplx"
-    ],
+    "aliases": ["perplexity ai", "perplexity api", "pplx"],
     "llms_full_txt_url": "https://docs.perplexity.ai/llms-full.txt"
   },
   {
@@ -1400,10 +1137,7 @@
     "name": "PostFast",
     "description": "PostFast is a social media management tool for cross-posting content across multiple platforms including X, LinkedIn, TikTok, and more.",
     "llms_txt_url": "https://postfa.st/llms.txt",
-    "aliases": [
-      "postfa.st",
-      "postfast social"
-    ],
+    "aliases": ["postfa.st", "postfast social"],
     "llms_full_txt_url": "https://postfa.st/llms-full.txt"
   },
   {
@@ -1419,20 +1153,12 @@
     "name": "Prettier",
     "description": "Prettier is an opinionated code formatter that enforces a consistent style by parsing code and reprinting it with its own rules.",
     "llms_txt_url": "https://prettier.io/llms.txt",
-    "aliases": [
-      "prettier formatter",
-      "code formatter"
-    ],
+    "aliases": ["prettier formatter", "code formatter"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "prettier"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["prettier"],
         "readme_url": "https://raw.githubusercontent.com/prettier/prettier/main/README.md",
         "repo_url": "https://github.com/prettier/prettier"
       }
@@ -1444,22 +1170,12 @@
     "name": "Prisma",
     "description": "Prisma is a next-generation TypeScript ORM for Node.js that provides type-safe database access, migrations, and a visual database browser.",
     "llms_txt_url": "https://prisma.io/docs/llms.txt",
-    "aliases": [
-      "prisma orm",
-      "prisma client",
-      "prisma migrate"
-    ],
+    "aliases": ["prisma orm", "prisma client", "prisma migrate"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "prisma",
-          "@prisma/client"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["prisma", "@prisma/client"],
         "readme_url": "https://raw.githubusercontent.com/prisma/prisma/main/README.md",
         "repo_url": "https://github.com/prisma/prisma"
       }
@@ -1471,21 +1187,12 @@
     "name": "Pydantic",
     "description": "Pydantic is the most widely used data validation library for Python, using Python type annotations to validate and serialize data.",
     "llms_txt_url": "https://docs.pydantic.dev/latest/llms.txt",
-    "aliases": [
-      "pydantic v2",
-      "pydantic settings",
-      "pydantic validation"
-    ],
+    "aliases": ["pydantic v2", "pydantic settings", "pydantic validation"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "pydantic",
-          "pydantic-settings"
-        ],
+        "languages": ["python"],
+        "package_names": ["pydantic", "pydantic-settings"],
         "readme_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/README.md",
         "repo_url": "https://github.com/pydantic/pydantic"
       }
@@ -1509,13 +1216,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@rainbow-me/rainbowkit"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@rainbow-me/rainbowkit"],
         "repo_url": "https://github.com/rainbow-me/rainbowkit"
       }
     ],
@@ -1527,20 +1229,12 @@
     "name": "React",
     "description": "A JavaScript library for building user interfaces with a component-based architecture.",
     "llms_txt_url": "https://react.dev/llms.txt",
-    "aliases": [
-      "reactjs"
-    ],
+    "aliases": ["reactjs"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "react",
-          "react-dom"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["react", "react-dom"],
         "readme_url": "https://raw.githubusercontent.com/facebook/react/main/README.md",
         "repo_url": "https://github.com/facebook/react"
       }
@@ -1560,29 +1254,18 @@
     "name": "Resend",
     "description": "Modern email delivery platform",
     "llms_txt_url": "https://resend.com/docs/llms.txt",
-    "aliases": [
-      "resend-email"
-    ],
+    "aliases": ["resend-email"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "resend"
-        ],
+        "languages": ["python"],
+        "package_names": ["resend"],
         "repo_url": "https://github.com/resend/resend-node"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "resend"
-        ]
+        "languages": ["javascript", "typescript"],
+        "package_names": ["resend"]
       }
     ],
     "llms_full_txt_url": "https://resend.com/docs/llms-full.txt"
@@ -1618,31 +1301,19 @@
     "name": "Stripe",
     "description": "Stripe powers online and in-person payment processing and financial solutions for businesses of all sizes. Accept payments, send payouts, and automate financial processes with a suite of APIs and no-code tools.",
     "llms_txt_url": "https://docs.stripe.com/llms.txt",
-    "aliases": [
-      "stripe-api",
-      "stripe-payments"
-    ],
+    "aliases": ["stripe-api", "stripe-payments"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "stripe"
-        ],
+        "languages": ["python"],
+        "package_names": ["stripe"],
         "readme_url": "https://raw.githubusercontent.com/stripe/stripe-node/master/README.md",
         "repo_url": "https://github.com/stripe/stripe-node"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "stripe"
-        ]
+        "languages": ["javascript", "typescript"],
+        "package_names": ["stripe"]
       }
     ]
   },
@@ -1651,27 +1322,18 @@
     "name": "Supabase",
     "description": "Build production-grade applications with a Postgres database, Authentication,' instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free.",
     "llms_txt_url": "https://supabase.com/llms.txt",
-    "aliases": [
-      "supabase-js"
-    ],
+    "aliases": ["supabase-js"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "package_names": [
-          "supabase"
-        ],
+        "package_names": ["supabase"],
         "readme_url": "https://raw.githubusercontent.com/supabase/supabase/master/README.md",
         "repo_url": "https://github.com/supabase/supabase"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "@supabase/supabase-js"
-        ]
+        "languages": ["javascript", "typescript"],
+        "package_names": ["@supabase/supabase-js"]
       }
     ]
   },
@@ -1683,14 +1345,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "tamagui",
-          "@tamagui/core"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["tamagui", "@tamagui/core"],
         "repo_url": "https://github.com/tamagui/tamagui"
       }
     ],
@@ -1717,19 +1373,12 @@
     "name": "Turbo",
     "description": "Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust.",
     "llms_txt_url": "https://turbo.build/llms.txt",
-    "aliases": [
-      "turborepo"
-    ],
+    "aliases": ["turborepo"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "turbo"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["turbo"],
         "repo_url": "https://github.com/vercel/turbo"
       }
     ],
@@ -1749,30 +1398,18 @@
     "name": "Turso",
     "description": "Edge database platform",
     "llms_txt_url": "https://docs.turso.tech/llms.txt",
-    "aliases": [
-      "libsql",
-      "turso-db"
-    ],
+    "aliases": ["libsql", "turso-db"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "libsql-experimental"
-        ],
+        "languages": ["python"],
+        "package_names": ["libsql-experimental"],
         "repo_url": "https://github.com/tursodatabase/libsql"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@libsql/client"
-        ]
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@libsql/client"]
       }
     ],
     "llms_full_txt_url": "https://docs.turso.tech/llms-full.txt"
@@ -1782,9 +1419,7 @@
     "name": "UI Thing",
     "description": "TailwindCSS component library and CLI for Nuxt (shadcn-style), powered by Reka UI",
     "llms_txt_url": "https://uithing.com/llms.txt",
-    "aliases": [
-      "thing"
-    ],
+    "aliases": ["thing"],
     "packages": [],
     "llms_full_txt_url": "https://uithing.com/llms-full.txt"
   },
@@ -1793,20 +1428,12 @@
     "name": "Upstash",
     "description": "Serverless database and caching platform",
     "llms_txt_url": "https://upstash.com/docs/llms.txt",
-    "aliases": [
-      "upstash-redis"
-    ],
+    "aliases": ["upstash-redis"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@upstash/redis",
-          "@upstash/ratelimit"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@upstash/redis", "@upstash/ratelimit"],
         "repo_url": "https://github.com/upstash/upstash-redis"
       }
     ],
@@ -1817,9 +1444,7 @@
     "name": "Vue.js",
     "description": "Vue.js - The Progressive JavaScript Framework",
     "llms_txt_url": "https://vuejs.org/llms.txt",
-    "aliases": [
-      "vue"
-    ],
+    "aliases": ["vue"],
     "packages": [],
     "llms_full_txt_url": "https://vuejs.org/llms-full.txt"
   },
@@ -1828,11 +1453,7 @@
     "name": "Welcome to Bunny",
     "description": "Bunny is a subscription management and billing platform for B2B SaaS companies. It provides recurring and usage billing, invoicing, quoting and analytics.",
     "llms_txt_url": "https://docs.bunny.com/llms.txt",
-    "aliases": [
-      "welcome",
-      "welcome bunny",
-      "bunny"
-    ],
+    "aliases": ["welcome", "welcome bunny", "bunny"],
     "packages": [],
     "llms_full_txt_url": "https://docs.bunny.com/guide/llms-full.txt"
   },
@@ -1850,10 +1471,7 @@
     "name": "Wordize Documentation",
     "description": "Convert, compare, split documents into pages, search and replace, and more with Wordize for .NET.",
     "llms_txt_url": "https://docs.wordize.com/llms.txt",
-    "aliases": [
-      "wordize",
-      "documentation"
-    ],
+    "aliases": ["wordize", "documentation"],
     "packages": [],
     "llms_full_txt_url": "https://docs.wordize.com/llms-full.txt"
   },
@@ -1871,32 +1489,18 @@
     "name": "ast-grep",
     "description": "A fast and polyglot tool for code structural search, lint, and rewriting at large scale.",
     "llms_txt_url": "https://ast-grep.github.io/llms.txt",
-    "aliases": [
-      "sg",
-      "ast-grep-napi",
-      "ast",
-      "grep"
-    ],
+    "aliases": ["sg", "ast-grep-napi", "ast", "grep"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python",
-          "rust"
-        ],
-        "package_names": [
-          "ast-grep-py"
-        ],
+        "languages": ["python", "rust"],
+        "package_names": ["ast-grep-py"],
         "repo_url": "https://github.com/ast-grep/ast-grep"
       },
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript"
-        ],
-        "package_names": [
-          "@ast-grep/napi"
-        ]
+        "languages": ["javascript"],
+        "package_names": ["@ast-grep/napi"]
       }
     ],
     "llms_full_txt_url": "https://ast-grep.github.io/llms-full.txt"
@@ -1915,10 +1519,7 @@
     "name": "iAgent Protocol",
     "description": "Enabling world gamers to train their own AI agents from gameplay footage, powered by a decentralized GPU computing, thereby creating a new on-chain asset class.",
     "llms_txt_url": "https://docs.iagentpro.com/llms.txt",
-    "aliases": [
-      "iagent",
-      "protocol"
-    ],
+    "aliases": ["iagent", "protocol"],
     "packages": [],
     "llms_full_txt_url": "https://docs.iagentpro.com/llms-full.txt"
   },
@@ -1927,10 +1528,7 @@
     "name": "videosdk.live",
     "description": "Embed customized audio & video calling APIs & SDKs and interactive live streaming APIs & SDKs to add live audio & video conferencing to your platform with Video SDK.",
     "llms_txt_url": "https://docs.videosdk.live/llms.txt",
-    "aliases": [
-      "videosdk",
-      "live"
-    ],
+    "aliases": ["videosdk", "live"],
     "packages": [],
     "llms_full_txt_url": "https://docs.videosdk.live/llms-full.txt"
   },
@@ -1939,9 +1537,7 @@
     "name": "AI Squared",
     "description": "AI integration platform for enterprise applications",
     "llms_txt_url": "https://docs.squared.ai/llms.txt",
-    "aliases": [
-      "squared"
-    ],
+    "aliases": ["squared"],
     "packages": [],
     "llms_full_txt_url": "https://docs.squared.ai/llms-full.txt"
   },
@@ -1983,10 +1579,7 @@
     "name": "Abstract API",
     "description": "abstractapi.com - Information and resources",
     "llms_txt_url": "https://abstractapi.com/llms.txt",
-    "aliases": [
-      "abstract",
-      "api"
-    ],
+    "aliases": ["abstract", "api"],
     "packages": []
   },
   {
@@ -2003,10 +1596,7 @@
     "name": "Acurast Hub",
     "description": "Acurast is the Real Decentralized Compute Network \u2014 scalable, secure, and powered by smartphones.",
     "llms_txt_url": "https://docs.acurast.com/llms.txt",
-    "aliases": [
-      "acurast",
-      "hub"
-    ],
+    "aliases": ["acurast", "hub"],
     "packages": [],
     "llms_full_txt_url": "https://docs.acurast.com/llms-full.txt"
   },
@@ -2085,9 +1675,7 @@
     "name": "Argil AI",
     "description": "AI development and deployment platform",
     "llms_txt_url": "https://docs.argil.ai/llms.txt",
-    "aliases": [
-      "argil"
-    ],
+    "aliases": ["argil"],
     "packages": [],
     "llms_full_txt_url": "https://docs.argil.ai/llms-full.txt"
   },
@@ -2104,10 +1692,7 @@
     "name": "Augment Code",
     "description": "Experience the AI platform that truly understands your codebase. Our developer AI helps teams code faster, make smarter decisions, and unlock collective knowledge. Try free today.",
     "llms_txt_url": "https://docs.augmentcode.com/llms.txt",
-    "aliases": [
-      "augment",
-      "code"
-    ],
+    "aliases": ["augment", "code"],
     "packages": [],
     "llms_full_txt_url": "https://docs.augmentcode.com/llms-full.txt"
   },
@@ -2125,9 +1710,7 @@
     "name": "Automatio AI",
     "description": "11 specialized AI agents and 50+ tools to automate web scraping, email, spreadsheets, calendars, and more. Just describe what you need in plain English.",
     "llms_txt_url": "https://automatio.ai/llms.txt",
-    "aliases": [
-      "automatio"
-    ],
+    "aliases": ["automatio"],
     "packages": [],
     "llms_full_txt_url": "https://automatio.ai/llms-full.txt"
   },
@@ -2154,13 +1737,7 @@
     "name": "Avada SEO Suite",
     "description": "Avada Commerce: Marketing Automation for eCommerce. Automated marketing to increase sales and reduce workloads.",
     "llms_txt_url": "https://docs.avada.io/seo-suite-help-center/llms.txt",
-    "aliases": [
-      "avada",
-      "seo",
-      "suite",
-      "avada seo",
-      "seo suite"
-    ],
+    "aliases": ["avada", "seo", "suite", "avada seo", "seo suite"],
     "packages": [],
     "llms_full_txt_url": "https://docs.avada.io/seo-suite-help-center/llms-full.txt"
   },
@@ -2169,10 +1746,7 @@
     "name": "Avalon Labs",
     "description": "Powering Bitcoin On-Chain Capital Markets.",
     "llms_txt_url": "https://docs.avalonfinance.xyz/llms.txt",
-    "aliases": [
-      "avalon",
-      "labs"
-    ],
+    "aliases": ["avalon", "labs"],
     "packages": [],
     "llms_full_txt_url": "https://docs.avalonfinance.xyz/llms-full.txt"
   },
@@ -2181,9 +1755,7 @@
     "name": "Ave.ai",
     "description": "The most powerful crypto and meme coin trading platform that uses AI and advanced data tools to consolidate blockchain data, DApps, and projects, making research and trading easier for all traders.",
     "llms_txt_url": "https://docs.ave.ai/llms.txt",
-    "aliases": [
-      "ave"
-    ],
+    "aliases": ["ave"],
     "packages": [],
     "llms_full_txt_url": "https://docs.ave.ai/llms-full.txt"
   },
@@ -2210,10 +1782,7 @@
     "name": "Axiom Trade",
     "description": "The Gateway to DeFi",
     "llms_txt_url": "https://docs.axiom.trade/llms.txt",
-    "aliases": [
-      "trade",
-      "axiom"
-    ],
+    "aliases": ["trade", "axiom"],
     "packages": [],
     "llms_full_txt_url": "https://docs.axiom.trade/llms-full.txt"
   },
@@ -2275,10 +1844,7 @@
     "name": "Bit Refinery",
     "description": "Hybrid Cloud Infrastructure - Run Your Workloads Efficiently. Enterprise-grade dedicated servers, GPU hosting, and cloud solutions.",
     "llms_txt_url": "https://bitrefinery.com/llms.txt",
-    "aliases": [
-      "bit",
-      "refinery"
-    ],
+    "aliases": ["bit", "refinery"],
     "packages": [],
     "llms_full_txt_url": "https://bitrefinery.com/llms-full.txt"
   },
@@ -2287,9 +1853,7 @@
     "name": "Bits UI",
     "description": "The headless components for Svelte.",
     "llms_txt_url": "https://bits-ui.com/llms.txt",
-    "aliases": [
-      "bits"
-    ],
+    "aliases": ["bits"],
     "packages": []
   },
   {
@@ -2315,13 +1879,7 @@
     "name": "Blue Media Services",
     "description": "A platform with solutions for your digital marketing needs to boost your sales with freedom of choice and use.",
     "llms_txt_url": "https://docs.bluems.com/en_us/llms.txt",
-    "aliases": [
-      "blue",
-      "media",
-      "blue media",
-      "media services",
-      "services"
-    ],
+    "aliases": ["blue", "media", "blue media", "media services", "services"],
     "packages": [],
     "llms_full_txt_url": "https://docs.bluems.com/bms/llms-full.txt"
   },
@@ -2357,10 +1915,7 @@
     "name": "Bright Data",
     "description": "Award winning proxy networks, powerful web scrapers, and ready-to-use datasets for download. Welcome to the world''s #1 web data platform.",
     "llms_txt_url": "https://docs.brightdata.com/llms.txt",
-    "aliases": [
-      "bright",
-      "data"
-    ],
+    "aliases": ["bright", "data"],
     "packages": [],
     "llms_full_txt_url": "https://docs.brightdata.com/llms-full.txt"
   },
@@ -2413,9 +1968,7 @@
     "name": "B\u00b2 Network",
     "description": "B\u00b2 Network is the most practical Bitcoin Layer2 Network.",
     "llms_txt_url": "https://docs.bsquared.network/llms.txt",
-    "aliases": [
-      "network"
-    ],
+    "aliases": ["network"],
     "packages": [],
     "llms_full_txt_url": "https://docs.bsquared.network/llms-full.txt"
   },
@@ -2433,10 +1986,7 @@
     "name": "CData Software",
     "description": "CData provides real-time data access across enterprise apps & infrastructure with the industry''s most comprehensive connectivity platform. Get started today.",
     "llms_txt_url": "https://www.cdata.com/llms.txt",
-    "aliases": [
-      "cdata",
-      "software"
-    ],
+    "aliases": ["cdata", "software"],
     "packages": []
   },
   {
@@ -2444,10 +1994,7 @@
     "name": "CID Contact",
     "description": "CID Contact is an Interplanetary Network Indexer built for IPFS and Filecoin.",
     "llms_txt_url": "https://docs.cid.contact/llms.txt",
-    "aliases": [
-      "cid",
-      "contact"
-    ],
+    "aliases": ["cid", "contact"],
     "packages": [],
     "llms_full_txt_url": "https://docs.cid.contact/llms-full.txt"
   },
@@ -2456,11 +2003,7 @@
     "name": "CNPJ.ws API",
     "description": "The CNPJ.ws API provides simple and fast access to information about Brazilian companies through their CNPJ number.",
     "llms_txt_url": "https://docs.cnpj.ws/llms.txt",
-    "aliases": [
-      "cnpj",
-      "cnpj api",
-      "api"
-    ],
+    "aliases": ["cnpj", "cnpj api", "api"],
     "packages": [],
     "llms_full_txt_url": "https://docs.cnpj.ws/llms-full.txt"
   },
@@ -2469,10 +2012,7 @@
     "name": "Cal.com",
     "description": "Open Source Scheduling: Send a link and meet or build an entire marketplace for humans to connect",
     "llms_txt_url": "https://cal.com/docs/llms.txt",
-    "aliases": [
-      "cal",
-      "com"
-    ],
+    "aliases": ["cal", "com"],
     "packages": [],
     "llms_full_txt_url": "https://cal.com/docs/llms-full.txt"
   },
@@ -2534,9 +2074,7 @@
     "name": "Chain.fm",
     "description": "Listen to the Chain",
     "llms_txt_url": "https://docs.chain.fm/docs/llms.txt",
-    "aliases": [
-      "chain"
-    ],
+    "aliases": ["chain"],
     "packages": [],
     "llms_full_txt_url": "https://docs.chain.fm/docs/llms-full.txt"
   },
@@ -2617,10 +2155,7 @@
     "name": "Checkmate Live",
     "description": "Checkmate Live is a next-gen speed chess platform using Sixth-i AI. This llms.txt defines how LLMs and agents may interact with our data and fair play systems.",
     "llms_txt_url": "https://raw.githubusercontent.com/Checkmate-Live/checkmate-ai-integrity/main/llms.txt",
-    "aliases": [
-      "checkmate",
-      "live"
-    ],
+    "aliases": ["checkmate", "live"],
     "packages": []
   },
   {
@@ -2628,10 +2163,7 @@
     "name": "Chiliz Chain",
     "description": "Chiliz Chain is the world''s only sports focused blockchain. Web3 partner to 70+ elite sports teams. Stop scrolling. Start building.",
     "llms_txt_url": "https://docs.chiliz.com/llms.txt",
-    "aliases": [
-      "chiliz",
-      "chain"
-    ],
+    "aliases": ["chiliz", "chain"],
     "packages": [],
     "llms_full_txt_url": "https://docs.chiliz.com/llms-full.txt"
   },
@@ -2640,10 +2172,7 @@
     "name": "Circular.bot",
     "description": "Advanced statistics and tools for arbitrage on Solana",
     "llms_txt_url": "https://docs.circular.bot/circular-docs/llms.txt",
-    "aliases": [
-      "circular",
-      "bot"
-    ],
+    "aliases": ["circular", "bot"],
     "packages": [],
     "llms_full_txt_url": "https://docs.circular.bot/circular-docs/llms-full.txt"
   },
@@ -2670,10 +2199,7 @@
     "name": "Claw-Stack",
     "description": "A modular research platform for autonomous AI agent governance and security. Explores multi-agent coordination, persistent memory, and policy enforcement for self-hosted AI systems.",
     "llms_txt_url": "https://claw-stack.com/llms.txt",
-    "aliases": [
-      "claw",
-      "stack"
-    ],
+    "aliases": ["claw", "stack"],
     "packages": [],
     "llms_full_txt_url": "https://claw-stack.com/llms-full.txt"
   },
@@ -2691,9 +2217,7 @@
     "name": "Clore.ai",
     "description": "CLORE.AI is distributed AI training, cloud rendering platform connecting server owners with renters",
     "llms_txt_url": "https://docs.clore.ai/llms.txt",
-    "aliases": [
-      "clore"
-    ],
+    "aliases": ["clore"],
     "packages": [],
     "llms_full_txt_url": "https://docs.clore.ai/llms-full.txt"
   },
@@ -2728,10 +2252,7 @@
     "name": "Codeium",
     "description": "Free AI-powered code autocomplete and context-aware coding assistant",
     "llms_txt_url": "https://docs.codeium.com/llms.txt",
-    "aliases": [
-      "windsurf",
-      "codeium-ai"
-    ],
+    "aliases": ["windsurf", "codeium-ai"],
     "llms_full_txt_url": "https://docs.windsurf.com/llms-full.txt"
   },
   {
@@ -2739,13 +2260,7 @@
     "name": "Coin98 Super Wallet",
     "description": "Coin98 is an open, decentralized crypto wallet offering tools and infrastructure for everyone to access and seize opportunities to build their future on the Open Internet.",
     "llms_txt_url": "https://docs.coin98.com/llms.txt",
-    "aliases": [
-      "coin98",
-      "super",
-      "wallet",
-      "coin98 super",
-      "super wallet"
-    ],
+    "aliases": ["coin98", "super", "wallet", "coin98 super", "super wallet"],
     "packages": [],
     "llms_full_txt_url": "https://docs.coin98.com/llms-full.txt"
   },
@@ -2763,10 +2278,7 @@
     "name": "Common Ninja",
     "description": "Boost engagement and increase conversions on your website with Common Ninja\u2019s free widgets and apps\u2014simple to embed on any website.",
     "llms_txt_url": "https://docs.commoninja.com/llms.txt",
-    "aliases": [
-      "common",
-      "ninja"
-    ],
+    "aliases": ["common", "ninja"],
     "packages": [],
     "llms_full_txt_url": "https://docs.commoninja.com/llms-full.txt"
   },
@@ -2851,9 +2363,7 @@
     "name": "Craft.co",
     "description": "Craft''s Supply Chain Resilience platform helps you know your suppliers better, protect against disruptions, and build supply chain resilience.",
     "llms_txt_url": "https://docs.craft.co/llms.txt",
-    "aliases": [
-      "craft"
-    ],
+    "aliases": ["craft"],
     "packages": [],
     "llms_full_txt_url": "https://docs.craft.co/llms-full.txt"
   },
@@ -2931,11 +2441,7 @@
     "name": "DataStax Astra DB",
     "description": "Go from app idea to production with the AI Platform with Astra DB, the ultra-low latency database made for AI and Langflow, the low-code RAG IDE.",
     "llms_txt_url": "https://www.datastax.com/llms.txt",
-    "aliases": [
-      "datastax",
-      "astra",
-      "datastax astra"
-    ],
+    "aliases": ["datastax", "astra", "datastax astra"],
     "packages": [],
     "llms_full_txt_url": "https://www.datastax.com/llms-full.txt"
   },
@@ -2944,10 +2450,7 @@
     "name": "Databuddy Analytics",
     "description": "Experience powerful, privacy-first analytics that beats GA without compromising user data. Zero cookies required, 100% data ownership.",
     "llms_txt_url": "https://www.databuddy.cc/llms.txt",
-    "aliases": [
-      "databuddy",
-      "analytics"
-    ],
+    "aliases": ["databuddy", "analytics"],
     "packages": []
   },
   {
@@ -2982,10 +2485,7 @@
     "name": "DeFi Saver",
     "description": "DeFi Saver is an all-in-one DeFi management tool for your assets and positions, providing you with non-custodial, trustless access to decentralized finance.",
     "llms_txt_url": "https://docs.defisaver.com/llms.txt",
-    "aliases": [
-      "defi",
-      "saver"
-    ],
+    "aliases": ["defi", "saver"],
     "packages": [],
     "llms_full_txt_url": "https://docs.defisaver.com/llms-full.txt"
   },
@@ -3036,10 +2536,7 @@
     "name": "Dub",
     "description": "Link management and URL shortening platform",
     "llms_txt_url": "https://dub.co/docs/llms.txt",
-    "aliases": [
-      "dub-co",
-      "dub-links"
-    ],
+    "aliases": ["dub-co", "dub-links"],
     "llms_full_txt_url": "https://dub.co/docs/llms-full.txt"
   },
   {
@@ -3047,10 +2544,7 @@
     "name": "Duende Software",
     "description": "We help companies using .NET to build identity and access control solutions for modern applications.",
     "llms_txt_url": "https://docs.duendesoftware.com/llms.txt",
-    "aliases": [
-      "duende",
-      "software"
-    ],
+    "aliases": ["duende", "software"],
     "packages": [],
     "llms_full_txt_url": "https://docs.duendesoftware.com/llms-full.txt"
   },
@@ -3068,10 +2562,7 @@
     "name": "Eclipse.xyz",
     "description": "Solana on Ethereum",
     "llms_txt_url": "https://docs.eclipse.xyz/llms.txt",
-    "aliases": [
-      "eclipse",
-      "xyz"
-    ],
+    "aliases": ["eclipse", "xyz"],
     "packages": [],
     "llms_full_txt_url": "https://docs.eclipse.xyz/llms-full.txt"
   },
@@ -3088,19 +2579,12 @@
     "name": "EmbedChain",
     "description": "AI embedding and chain management platform",
     "llms_txt_url": "https://docs.embedchain.ai/llms.txt",
-    "aliases": [
-      "embed-chain",
-      "mem0"
-    ],
+    "aliases": ["embed-chain", "mem0"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "embedchain"
-        ],
+        "languages": ["python"],
+        "package_names": ["embedchain"],
         "repo_url": "https://github.com/mem0ai/mem0"
       }
     ],
@@ -3111,10 +2595,7 @@
     "name": "Energy Web",
     "description": "Energy Web technology is powering decarbonization solutions in dozens of countries.",
     "llms_txt_url": "https://docs.energyweb.org/llms.txt",
-    "aliases": [
-      "energy",
-      "web"
-    ],
+    "aliases": ["energy", "web"],
     "packages": [],
     "llms_full_txt_url": "https://docs.energyweb.org/llms-full.txt"
   },
@@ -3159,9 +2640,7 @@
     "name": "Flip.to",
     "description": "Flip.to is the most trusted way to earn new guests. Increase direct bookings, build trusted brand connections and extend your reach to travelers across the world with the advocacy platform for hotels.",
     "llms_txt_url": "https://docs.flip.to/llms.txt",
-    "aliases": [
-      "flip"
-    ],
+    "aliases": ["flip"],
     "packages": [],
     "llms_full_txt_url": "https://docs.flip.to/llms-full.txt"
   },
@@ -3170,10 +2649,7 @@
     "name": "FlowX",
     "description": "FlowX.AI is a business process automation and digital transformation platform for building enterprise-grade applications.",
     "llms_txt_url": "https://docs.flowx.ai/llms.txt",
-    "aliases": [
-      "flowx ai",
-      "flowx.ai"
-    ],
+    "aliases": ["flowx ai", "flowx.ai"],
     "llms_full_txt_url": "https://docs.flowx.ai/llms-full.txt"
   },
   {
@@ -3199,9 +2675,7 @@
     "name": "FractalPay",
     "description": "FractalPay is a modern payment processing platform providing APIs for accepting and managing payments.",
     "llms_txt_url": "https://docs.fractalpay.com/llms.txt",
-    "aliases": [
-      "fractal pay"
-    ],
+    "aliases": ["fractal pay"],
     "llms_full_txt_url": "https://docs.fractalpay.com/llms-full.txt"
   },
   {
@@ -3209,9 +2683,7 @@
     "name": "Fraction AI",
     "description": "Democratizing High-Quality Training Data for AI with Web3",
     "llms_txt_url": "https://docs.fractionai.xyz/llms.txt",
-    "aliases": [
-      "fraction"
-    ],
+    "aliases": ["fraction"],
     "packages": [],
     "llms_full_txt_url": "https://fraction-ai.gitbook.io/fraction-ai-product-docs/llms-full.txt"
   },
@@ -3220,16 +2692,11 @@
     "name": "Frigade",
     "description": "Frigade is a user onboarding and product adoption platform for building in-app tours, checklists, announcements, and surveys.",
     "llms_txt_url": "https://docs.frigade.com/llms.txt",
-    "aliases": [
-      "frigade react",
-      "frigade onboarding"
-    ],
+    "aliases": ["frigade react", "frigade onboarding"],
     "packages": [
       {
         "ecosystem": "npm",
-        "package_names": [
-          "@frigade/react"
-        ],
+        "package_names": ["@frigade/react"],
         "repo_url": "https://github.com/FrigadeHQ/frigade-react"
       }
     ],
@@ -3299,18 +2766,14 @@
     "name": "Glama",
     "description": "Glama is an enterprise AI platform providing secure, privacy-first access to LLMs with features like agents, MCP integration, and prompt templates.",
     "llms_txt_url": "https://glama.ai/llms.txt",
-    "aliases": [
-      "glama ai"
-    ]
+    "aliases": ["glama ai"]
   },
   {
     "id": "glood-ai",
     "name": "Glood.AI",
     "description": "Get highly personalized customer experiences to retain customers seamlessly. Deliver personalised shopping experiences to your customers now!",
     "llms_txt_url": "https://docs.glood.ai/llms.txt",
-    "aliases": [
-      "glood"
-    ],
+    "aliases": ["glood"],
     "packages": [],
     "llms_full_txt_url": "https://docs.glood.ai/llms-full.txt"
   },
@@ -3319,10 +2782,7 @@
     "name": "Gnosis Chain",
     "description": "The community run chain. Gnosis Chain is one of the first Ethereum sidechains and has stayed true to its values.",
     "llms_txt_url": "https://docs.gnosischain.com/llms.txt",
-    "aliases": [
-      "gnosis",
-      "chain"
-    ],
+    "aliases": ["gnosis", "chain"],
     "packages": []
   },
   {
@@ -3330,13 +2790,7 @@
     "name": "GoRules - Rules Engine",
     "description": "Build, test, and deploy business rules without writing code. GoRules empowers business teams while giving developers the control they need.",
     "llms_txt_url": "https://gorules.io/llms.txt",
-    "aliases": [
-      "gorules",
-      "rules",
-      "engine",
-      "gorules rules",
-      "rules engine"
-    ],
+    "aliases": ["gorules", "rules", "engine", "gorules rules", "rules engine"],
     "packages": [],
     "llms_full_txt_url": "https://gorules.io/llms-full.txt"
   },
@@ -3345,10 +2799,7 @@
     "name": "Goody",
     "description": "Goody is a corporate gifting and rewards platform with an API for sending curated gifts to employees and customers.",
     "llms_txt_url": "https://developer.ongoody.com/llms.txt",
-    "aliases": [
-      "ongoody",
-      "goody gifts"
-    ],
+    "aliases": ["ongoody", "goody gifts"],
     "llms_full_txt_url": "https://developer.ongoody.com/llms-full.txt"
   },
   {
@@ -3395,10 +2846,7 @@
     "name": "Home \u2022 Angular",
     "description": "The web development framework for building modern apps.",
     "llms_txt_url": "https://angular.dev/llms.txt",
-    "aliases": [
-      "angular",
-      "home"
-    ],
+    "aliases": ["angular", "home"],
     "packages": []
   },
   {
@@ -3415,10 +2863,7 @@
     "name": "Humanity Protocol",
     "description": "It''s time Humanstake control - Web3 for humans.",
     "llms_txt_url": "https://docs.humanity.org/llms.txt",
-    "aliases": [
-      "humanity",
-      "protocol"
-    ],
+    "aliases": ["humanity", "protocol"],
     "packages": [],
     "llms_full_txt_url": "https://docs.humanity.org/llms-full.txt"
   },
@@ -3427,9 +2872,7 @@
     "name": "Hybrid.ai",
     "description": "AI-based creative optimization solutions for a powerful marketing influence",
     "llms_txt_url": "https://docs.hybrid.ai/platform-documentation/llms.txt",
-    "aliases": [
-      "hybrid"
-    ],
+    "aliases": ["hybrid"],
     "packages": [],
     "llms_full_txt_url": "https://docs.hybrid.ai/platform-documentation/llms-full.txt"
   },
@@ -3438,10 +2881,7 @@
     "name": "Hyperline",
     "description": "Hyperline is a billing and revenue management platform for SaaS companies, offering subscription management and usage-based billing.",
     "llms_txt_url": "https://docs.hyperline.co/llms.txt",
-    "aliases": [
-      "hyperline billing",
-      "hyperline co"
-    ],
+    "aliases": ["hyperline billing", "hyperline co"],
     "llms_full_txt_url": "https://docs.hyperline.co/llms-full.txt"
   },
   {
@@ -3458,10 +2898,7 @@
     "name": "IMAGIN.studio",
     "description": "The ultimate car imagery solution. IMAGIN.studio is reshaping the landscape of car images with its remarkable data-driven and AI-fuelled car imagery solution.",
     "llms_txt_url": "https://docs.imagin.studio/llms.txt",
-    "aliases": [
-      "imagin",
-      "studio"
-    ],
+    "aliases": ["imagin", "studio"],
     "packages": [],
     "llms_full_txt_url": "https://docs.imagin.studio/llms-full.txt"
   },
@@ -3479,10 +2916,7 @@
     "name": "IPRoyal.com",
     "description": "Get a proxy service provider without contracts, non-expiring traffic, and easy self-service.",
     "llms_txt_url": "https://docs.iproyal.com/llms.txt",
-    "aliases": [
-      "iproyal",
-      "com"
-    ],
+    "aliases": ["iproyal", "com"],
     "packages": [],
     "llms_full_txt_url": "https://docs.iproyal.com/llms-full.txt"
   },
@@ -3491,13 +2925,7 @@
     "name": "Ice Open Network",
     "description": "Discover how Ice Open Network (ION) leads the charge towards a decentralized future with unmatched speed and scalability.",
     "llms_txt_url": "https://docs.ice.io/llms.txt",
-    "aliases": [
-      "ice",
-      "open",
-      "ice open",
-      "open network",
-      "network"
-    ],
+    "aliases": ["ice", "open", "ice open", "open network", "network"],
     "packages": [],
     "llms_full_txt_url": "https://docs.ice.io/llms-full.txt"
   },
@@ -3533,10 +2961,7 @@
     "name": "Imagine.Art",
     "description": "Create AI Art and turn your imaginations into reality with Imagine\u2019s AI Art Generator and produce stunning visuals to cover up your artistic thoughts.",
     "llms_txt_url": "https://docs.imagine.art/llms.txt",
-    "aliases": [
-      "imagine",
-      "art"
-    ],
+    "aliases": ["imagine", "art"],
     "packages": [],
     "llms_full_txt_url": "https://docs.imagine.art/llms-full.txt"
   },
@@ -3545,11 +2970,7 @@
     "name": "Immortal Rising 2",
     "description": "Dark fantasy RPG where players become Immortals battling Demons in a richly detailed world. With stylish combat, extensive skill combinations, and strategic guild alliances, every decision shapes your adventure.",
     "llms_txt_url": "https://docs.immortalrising2.com/llms.txt",
-    "aliases": [
-      "immortal",
-      "rising",
-      "immortal rising"
-    ],
+    "aliases": ["immortal", "rising", "immortal rising"],
     "packages": [],
     "llms_full_txt_url": "https://docs.immortalrising2.com/llms-full.txt"
   },
@@ -3585,10 +3006,7 @@
     "name": "Injective Hub",
     "description": "A unified interface for Injective staking, governance, insurance funds and wallets",
     "llms_txt_url": "https://docs.injective.network/llms.txt",
-    "aliases": [
-      "injective",
-      "hub"
-    ],
+    "aliases": ["injective", "hub"],
     "packages": [],
     "llms_full_txt_url": "https://docs.injective.network/llms-full.txt"
   },
@@ -3605,10 +3023,7 @@
     "name": "Insilico Terminal",
     "description": "The Original Crypto Trading Terminal",
     "llms_txt_url": "https://docs.insilicoterminal.com/documentation/llms.txt",
-    "aliases": [
-      "insilico",
-      "terminal"
-    ],
+    "aliases": ["insilico", "terminal"],
     "packages": [],
     "llms_full_txt_url": "https://docs.insilicoterminal.com/documentation/llms-full.txt"
   },
@@ -3626,9 +3041,7 @@
     "name": "Inspira UI",
     "description": "Open Source components to build stunning animated interfaces effortlessly using Vue &amp; Nuxt.",
     "llms_txt_url": "https://inspira-ui.com/llms.txt",
-    "aliases": [
-      "inspira"
-    ],
+    "aliases": ["inspira"],
     "packages": [],
     "llms_full_txt_url": "https://inspira-ui.com/llms-full.txt"
   },
@@ -3664,10 +3077,7 @@
     "name": "Intuned",
     "description": "Intuned is a browser automation and web scraping platform for building reliable data extraction and automation workflows.",
     "llms_txt_url": "https://docs.intunedhq.com/llms.txt",
-    "aliases": [
-      "intuned hq",
-      "intunedhq"
-    ],
+    "aliases": ["intuned hq", "intunedhq"],
     "llms_full_txt_url": "https://docs.intunedhq.com/llms-full.txt"
   },
   {
@@ -3684,10 +3094,7 @@
     "name": "Island Router",
     "description": "The best internet experience starts with the best router. That\u2019s why we built Island.",
     "llms_txt_url": "https://docs.islandrouter.com/llms.txt",
-    "aliases": [
-      "island",
-      "router"
-    ],
+    "aliases": ["island", "router"],
     "packages": [],
     "llms_full_txt_url": "https://docs.islandrouter.com/llms-full.txt"
   },
@@ -3714,10 +3121,7 @@
     "name": "Jazz.tools",
     "description": "Jazz is an open-source framework for building local-first apps, removing 90% of the backend and infrastructure complexity.",
     "llms_txt_url": "https://jazz.tools/llms.txt",
-    "aliases": [
-      "jazz",
-      "tools"
-    ],
+    "aliases": ["jazz", "tools"],
     "packages": [],
     "llms_full_txt_url": "https://jazz.tools/llms-full.txt"
   },
@@ -3753,10 +3157,7 @@
     "name": "Juniper Creates",
     "description": "Build custom products that you and your fans can be proud of.",
     "llms_txt_url": "https://docs.junipercreates.com/llms.txt",
-    "aliases": [
-      "juniper",
-      "creates"
-    ],
+    "aliases": ["juniper", "creates"],
     "packages": [],
     "llms_full_txt_url": "https://docs.junipercreates.com/llms-full.txt"
   },
@@ -3783,10 +3184,7 @@
     "name": "Kaisar Network",
     "description": "The Universal AI Compute Layer. Your Compute, Your Currency.",
     "llms_txt_url": "https://docs.kaisar.io/kaisar-network/llms.txt",
-    "aliases": [
-      "kaisar",
-      "network"
-    ],
+    "aliases": ["kaisar", "network"],
     "packages": [],
     "llms_full_txt_url": "https://docs.kaisar.io/kaisar-network/llms-full.txt"
   },
@@ -3804,10 +3202,7 @@
     "name": "Karrier One",
     "description": "Building the foundation for truly borderless connectivity through decentralized infrastructure.",
     "llms_txt_url": "https://faq.karrier.one/llms.txt",
-    "aliases": [
-      "karrier",
-      "one"
-    ],
+    "aliases": ["karrier", "one"],
     "packages": [],
     "llms_full_txt_url": "https://faq.karrier.one/llms-full.txt"
   },
@@ -3825,10 +3220,7 @@
     "name": "Keeper Wallet",
     "description": "High-security wallet with swapping capabilities. Keeper Wallet is your entry point to the Waves blockchain and Waves-powered web services.",
     "llms_txt_url": "https://docs.keeper-wallet.app/llms.txt",
-    "aliases": [
-      "keeper",
-      "wallet"
-    ],
+    "aliases": ["keeper", "wallet"],
     "packages": [],
     "llms_full_txt_url": "https://docs.keeper-wallet.app/llms-full.txt"
   },
@@ -3891,11 +3283,7 @@
     "name": "Lago",
     "description": "Lago is an open-source metering and usage-based billing platform for SaaS companies.",
     "llms_txt_url": "https://getlago.com/docs/llms.txt",
-    "aliases": [
-      "getlago",
-      "lago billing",
-      "lago metering"
-    ],
+    "aliases": ["getlago", "lago billing", "lago metering"],
     "llms_full_txt_url": "https://getlago.com/docs/llms-full.txt"
   },
   {
@@ -3921,10 +3309,7 @@
     "name": "Legend State",
     "description": "Legend State is an extremely fast signal-based state library with fine-grained reactivity and a powerful sync system that works with any backend.",
     "llms_txt_url": "https://legendapp.com/open-source/state/v3/llms.txt",
-    "aliases": [
-      "state",
-      "legend"
-    ],
+    "aliases": ["state", "legend"],
     "packages": [],
     "llms_full_txt_url": "https://legendapp.com/open-source/state/v3/llms-full.txt"
   },
@@ -3933,11 +3318,7 @@
     "name": "Legends of Learning",
     "description": "Science and math, learning games designed to engage students and boost test scores. Aligned to standards, backed by research, and reviewed by educators.",
     "llms_txt_url": "https://docs.legendsoflearning.com/llms.txt",
-    "aliases": [
-      "legends",
-      "learning",
-      "legends learning"
-    ],
+    "aliases": ["legends", "learning", "legends learning"],
     "packages": [],
     "llms_full_txt_url": "https://docs.legendsoflearning.com/llms-full.txt"
   },
@@ -3954,10 +3335,7 @@
     "name": "Liam ERD",
     "description": "Automatically generates beautiful and easy-to-read ER diagrams from your database.",
     "llms_txt_url": "https://liambx.com/docs/llms.txt",
-    "aliases": [
-      "liam",
-      "erd"
-    ],
+    "aliases": ["liam", "erd"],
     "packages": [],
     "llms_full_txt_url": "https://liambx.com/docs/llms-full.txt"
   },
@@ -4002,19 +3380,12 @@
     "name": "LogLayer",
     "description": "LogLayer is a structured logging library with a fluent API for specifying log messages, metadata, and errors across multiple logging backends.",
     "llms_txt_url": "https://loglayer.dev/llms.txt",
-    "aliases": [
-      "loglayer.dev"
-    ],
+    "aliases": ["loglayer.dev"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "loglayer"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["loglayer"],
         "readme_url": "https://raw.githubusercontent.com/theogravity/loglayer/main/README.md",
         "repo_url": "https://github.com/theogravity/loglayer"
       }
@@ -4026,10 +3397,7 @@
     "name": "LongPort OpenAPI",
     "description": "Access LongPort OpenAPI for diversified and flexible support tailored to your programmatic trading needs. Enhance your trading strategies with ease.",
     "llms_txt_url": "https://open.longbridgeapp.com/llms.txt",
-    "aliases": [
-      "longport",
-      "openapi"
-    ],
+    "aliases": ["longport", "openapi"],
     "packages": [],
     "llms_full_txt_url": "https://open.longportapp.com/llms-full.txt"
   },
@@ -4056,10 +3424,7 @@
     "name": "LuxAlgo",
     "description": "LuxAlgo is a provider of advanced trading indicators and algorithmic analysis tools for financial markets.",
     "llms_txt_url": "https://docs.luxalgo.com/llms.txt",
-    "aliases": [
-      "lux algo",
-      "luxalgo indicators"
-    ],
+    "aliases": ["lux algo", "luxalgo indicators"],
     "llms_full_txt_url": "https://docs.luxalgo.com/llms-full.txt"
   },
   {
@@ -4076,9 +3441,7 @@
     "name": "MUI X",
     "description": "MUI X: Advanced React components for complex use cases.",
     "llms_txt_url": "https://mui.com/x/llms.txt",
-    "aliases": [
-      "mui"
-    ],
+    "aliases": ["mui"],
     "packages": []
   },
   {
@@ -4103,9 +3466,7 @@
     "name": "Maxim AI",
     "description": "Evaluate and ship your AI applications with quality, speed, and reliability.",
     "llms_txt_url": "https://getmaxim.ai/docs/llms.txt",
-    "aliases": [
-      "maxim"
-    ],
+    "aliases": ["maxim"],
     "packages": [],
     "llms_full_txt_url": "https://www.getmaxim.ai/docs/llms-full.txt"
   },
@@ -4114,10 +3475,7 @@
     "name": "MeshConnect",
     "description": "MeshConnect is a crypto integration platform providing APIs to connect users' crypto wallets and exchange accounts.",
     "llms_txt_url": "https://docs.meshconnect.com/llms.txt",
-    "aliases": [
-      "mesh connect",
-      "mesh crypto"
-    ],
+    "aliases": ["mesh connect", "mesh crypto"],
     "llms_full_txt_url": "https://docs.meshconnect.com/llms-full.txt"
   },
   {
@@ -4156,9 +3514,7 @@
     "name": "Monster UI",
     "description": "MonsterUI is a python library which brings styling to python for FastHTML apps.",
     "llms_txt_url": "https://monsterui.answer.ai/llms.txt",
-    "aliases": [
-      "monster"
-    ],
+    "aliases": ["monster"],
     "packages": []
   },
   {
@@ -4166,10 +3522,7 @@
     "name": "Morphic Solutions",
     "description": "AI automation platform that builds custom digital agents and process optimization for manufacturing, logistics, and trade companies.",
     "llms_txt_url": "https://www.morphic-solutions.com/llms.txt",
-    "aliases": [
-      "morphic",
-      "solutions"
-    ],
+    "aliases": ["morphic", "solutions"],
     "packages": []
   },
   {
@@ -4212,10 +3565,7 @@
     "name": "Naviga Global",
     "description": "Naviga solutions are built to help you deliver the right information, amplify your message and generate revenue in a rapidly shifting market.",
     "llms_txt_url": "https://docs.navigaglobal.com/general/llms.txt",
-    "aliases": [
-      "naviga",
-      "global"
-    ],
+    "aliases": ["naviga", "global"],
     "packages": [],
     "llms_full_txt_url": "https://docs.navigaglobal.com/general/llms-full.txt"
   },
@@ -4224,10 +3574,7 @@
     "name": "Needle Cloud",
     "description": "The fastest way to get spatial apps and assets into the web. Automatically optimize 3D assets in many different formats (glTF, VRM, USD, FBX, OBJ) with state-of-the-art compression for meshes and textures, progressive 3D loading and fast downloads everrywhere in the world via CDN!",
     "llms_txt_url": "https://cloud.needle.tools/llms.txt",
-    "aliases": [
-      "needle",
-      "cloud"
-    ],
+    "aliases": ["needle", "cloud"],
     "packages": [],
     "llms_full_txt_url": "https://cloud.needle.tools/llms-full.txt"
   },
@@ -4244,10 +3591,7 @@
     "name": "Novi Labs",
     "description": "Optimize energy investments with precise well forecasts and well-level upstream data. Energy Data Analytics for oil & gas operators and investors.",
     "llms_txt_url": "https://novilabs.com/llms.txt",
-    "aliases": [
-      "novi",
-      "labs"
-    ],
+    "aliases": ["novi", "labs"],
     "packages": []
   },
   {
@@ -4255,10 +3599,7 @@
     "name": "OnAgents.org",
     "description": "Exploration of LLM agent systems, their design patterns, legal frameworks, and value-generating capabilities.",
     "llms_txt_url": "https://onagents.org/llms.txt",
-    "aliases": [
-      "onagents",
-      "org"
-    ],
+    "aliases": ["onagents", "org"],
     "packages": [],
     "llms_full_txt_url": "https://onagents.org/llms-full.txt"
   },
@@ -4283,9 +3624,7 @@
     "name": "Pagesmith.ai",
     "description": "AI website builder for sites that rank on Google and AI search. Real HTML, Schema.org markup, production-ready code you own.",
     "llms_txt_url": "https://pagesmith.ai/llms.txt",
-    "aliases": [
-      "pagesmith"
-    ],
+    "aliases": ["pagesmith"],
     "packages": []
   },
   {
@@ -4327,10 +3666,7 @@
     "name": "Pinata",
     "description": "Pinata is an IPFS pinning service and file management platform for storing and retrieving decentralized content.",
     "llms_txt_url": "https://docs.pinata.cloud/llms.txt",
-    "aliases": [
-      "pinata cloud",
-      "pinata ipfs"
-    ],
+    "aliases": ["pinata cloud", "pinata ipfs"],
     "llms_full_txt_url": "https://docs.pinata.cloud/llms-full.txt"
   },
   {
@@ -4338,10 +3674,7 @@
     "name": "PlanProvider.Pro",
     "description": "Connect with verified retirement plan auditors, financial advisors, recordkeepers, and TPAs. Streamline your provider search with RFP tools and expert matching.",
     "llms_txt_url": "https://planprovider.pro/llms.txt",
-    "aliases": [
-      "planprovider",
-      "pro"
-    ],
+    "aliases": ["planprovider", "pro"],
     "packages": []
   },
   {
@@ -4349,9 +3682,7 @@
     "name": "Platform.sh",
     "description": "Our platform as a service (PaaS) gives development teams control and peace of mind while accelerating the time to build and deploy applications.",
     "llms_txt_url": "https://docs.platform.sh/llms.txt",
-    "aliases": [
-      "platform"
-    ],
+    "aliases": ["platform"],
     "packages": [],
     "llms_full_txt_url": "https://fixed.docs.upsun.com/llms-full.txt"
   },
@@ -4369,10 +3700,7 @@
     "name": "PrimeV",
     "description": "Primev is a blockchain infrastructure platform providing MEV (Maximal Extractable Value) commitments and block building services.",
     "llms_txt_url": "https://docs.primev.xyz/llms.txt",
-    "aliases": [
-      "primev xyz",
-      "primev mev"
-    ],
+    "aliases": ["primev xyz", "primev mev"],
     "llms_full_txt_url": "https://docs.primev.xyz/llms-full.txt"
   },
   {
@@ -4388,10 +3716,7 @@
     "name": "Progress.rocks",
     "description": "Progress.rocks offers a simple API providing progress bars in SVG format.",
     "llms_txt_url": "https://progress.rocks/llms.txt",
-    "aliases": [
-      "progress",
-      "rocks"
-    ],
+    "aliases": ["progress", "rocks"],
     "packages": []
   },
   {
@@ -4416,9 +3741,7 @@
     "name": "RankScale.ai",
     "description": "Rankscale is a GEO (Generative-Engine-Optimization) tool to track, analyze and optimize brand visibility on AI search engines like Perplexity, ChatGPT & AI Overviews.",
     "llms_txt_url": "https://rankscale.ai/llms.txt",
-    "aliases": [
-      "rankscale"
-    ],
+    "aliases": ["rankscale"],
     "packages": [],
     "llms_full_txt_url": "https://rankscale.ai/llms-full.txt"
   },
@@ -4463,9 +3786,7 @@
     "name": "Respond.io",
     "description": "Respond.io is an AI-powered customer conversation platform that helps B2Cs capture, convert, and retain customers over chat, calls and email at scale.",
     "llms_txt_url": "https://respond.io/llms.txt",
-    "aliases": [
-      "respond"
-    ],
+    "aliases": ["respond"],
     "packages": [],
     "llms_full_txt_url": "https://respond.io/llms-full.txt"
   },
@@ -4482,9 +3803,7 @@
     "name": "Reve AI",
     "description": "Choose this API to generate and edit images",
     "llms_txt_url": "https://api.reve.com/llms.txt",
-    "aliases": [
-      "reve"
-    ],
+    "aliases": ["reve"],
     "packages": []
   },
   {
@@ -4495,13 +3814,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "@rsbuild/core"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["@rsbuild/core"],
         "repo_url": "https://github.com/web-infra-dev/rsbuild"
       }
     ],
@@ -4516,13 +3830,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "@rslib/core"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["@rslib/core"],
         "repo_url": "https://github.com/web-infra-dev/rslib"
       }
     ],
@@ -4537,13 +3846,8 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "@rspack/core"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["@rspack/core"],
         "repo_url": "https://github.com/web-infra-dev/rspack"
       }
     ],
@@ -4582,10 +3886,7 @@
     "name": "Samsung Food",
     "description": "Whisk App is now Samsung Food! Ultimate cooking app to organize recipes, meal plan, grocery shop, & more. Download it free on Apple & Android.",
     "llms_txt_url": "https://docs.whisk.com/llms.txt",
-    "aliases": [
-      "samsung",
-      "food"
-    ],
+    "aliases": ["samsung", "food"],
     "packages": [],
     "llms_full_txt_url": "https://docs.whisk.com/llms-full.txt"
   },
@@ -4685,9 +3986,7 @@
     "name": "SkyDeck.ai",
     "description": "AI-powered business intelligence platform",
     "llms_txt_url": "https://llm.skydeck.ai/llms.txt",
-    "aliases": [
-      "skydeck"
-    ],
+    "aliases": ["skydeck"],
     "packages": [],
     "llms_full_txt_url": "https://llm.skydeck.ai/llms-full.txt"
   },
@@ -4696,9 +3995,7 @@
     "name": "Smartcar",
     "description": "Connected car API platform",
     "llms_txt_url": "https://smartcar.com/docs/llms.txt",
-    "aliases": [
-      "smartcar-api"
-    ],
+    "aliases": ["smartcar-api"],
     "llms_full_txt_url": "https://smartcar.com/docs/llms-full.txt"
   },
   {
@@ -4715,9 +4012,7 @@
     "name": "Sociality.io",
     "description": "Sociality.io is an AI\u2011first, human\u2011in\u2011the\u2011loop platform for social media analytics, engagement, social listening, competitor analysis and publishing automation.",
     "llms_txt_url": "https://sociality.io/llms.txt",
-    "aliases": [
-      "sociality"
-    ],
+    "aliases": ["sociality"],
     "packages": []
   },
   {
@@ -4758,9 +4053,7 @@
     "name": "Sunra AI",
     "description": "Sunra.ai is a generative media platform built for developers, providing high-performance AI model inference capabilities. It specializes in running diffusion models through production-ready APIs and interactive UI playgrounds.",
     "llms_txt_url": "https://sunra.ai/llms.txt",
-    "aliases": [
-      "sunra"
-    ],
+    "aliases": ["sunra"],
     "packages": []
   },
   {
@@ -4786,19 +4079,12 @@
     "name": "Svelte",
     "description": "Modern web application framework",
     "llms_txt_url": "https://svelte.dev/llms.txt",
-    "aliases": [
-      "sveltekit"
-    ],
+    "aliases": ["sveltekit"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "svelte"
-        ],
+        "languages": ["javascript", "typescript"],
+        "package_names": ["svelte"],
         "readme_url": "https://raw.githubusercontent.com/sveltejs/svelte/main/README.md",
         "repo_url": "https://github.com/sveltejs/svelte"
       }
@@ -4866,9 +4152,7 @@
     "name": "Taskade AI",
     "description": "Meet your AI workforce in Taskade. Build apps from a prompt. Connect tasks, data, and agents that think, plan, and act\u2014automating work across your team.",
     "llms_txt_url": "https://www.taskade.com/llms.txt",
-    "aliases": [
-      "taskade"
-    ],
+    "aliases": ["taskade"],
     "packages": []
   },
   {
@@ -4910,11 +4194,7 @@
     "name": "TinyMCE 8 Documentation",
     "description": "llms.txt is a structured docs index for LLMs, llms-full.txt contains the complete documentation in machine-readable text.",
     "llms_txt_url": "https://www.tiny.cloud/docs/llms.txt",
-    "aliases": [
-      "tinymce",
-      "tinymce documentation",
-      "documentation"
-    ],
+    "aliases": ["tinymce", "tinymce documentation", "documentation"],
     "packages": [],
     "llms_full_txt_url": "https://www.tiny.cloud/docs/llms-full.txt"
   },
@@ -4923,9 +4203,7 @@
     "name": "Tinybird",
     "description": "Real-time analytics and data processing platform",
     "llms_txt_url": "https://www.tinybird.co/docs/llms.txt",
-    "aliases": [
-      "tinybird-analytics"
-    ],
+    "aliases": ["tinybird-analytics"],
     "llms_full_txt_url": "https://www.tinybird.co/docs/llms-full.txt"
   },
   {
@@ -4933,21 +4211,12 @@
     "name": "Trigger.dev",
     "description": "Background job and workflow automation platform",
     "llms_txt_url": "https://trigger.dev/docs/llms.txt",
-    "aliases": [
-      "trigger",
-      "triggerdotdev",
-      "dev"
-    ],
+    "aliases": ["trigger", "triggerdotdev", "dev"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "@trigger.dev/sdk"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@trigger.dev/sdk"],
         "readme_url": "https://raw.githubusercontent.com/triggerdotdev/trigger.dev/main/README.md",
         "repo_url": "https://github.com/triggerdotdev/trigger.dev"
       }
@@ -4967,9 +4236,7 @@
     "name": "TryOpenClaw.ai",
     "description": "Managed hosting platform for OpenClaw, the open-source AI assistant that connects to WhatsApp, Telegram, Discord, Slack, and iMessage.",
     "llms_txt_url": "https://www.tryopenclaw.ai/llms.txt",
-    "aliases": [
-      "tryopenclaw"
-    ],
+    "aliases": ["tryopenclaw"],
     "packages": []
   },
   {
@@ -5034,18 +4301,12 @@
     "name": "Unstructured",
     "description": "Document processing and data extraction platform",
     "llms_txt_url": "https://docs.unstructured.io/llms.txt",
-    "aliases": [
-      "unstructured-io"
-    ],
+    "aliases": ["unstructured-io"],
     "packages": [
       {
         "ecosystem": "pypi",
-        "languages": [
-          "python"
-        ],
-        "package_names": [
-          "unstructured"
-        ],
+        "languages": ["python"],
+        "package_names": ["unstructured"],
         "repo_url": "https://github.com/Unstructured-IO/unstructured"
       }
     ],
@@ -5056,9 +4317,7 @@
     "name": "Upstreet AI",
     "description": "AI Agents for everyone. Build, chat with, and deploy Agents effortlessly.",
     "llms_txt_url": "https://docs.upstreet.ai/llms.txt",
-    "aliases": [
-      "upstreet"
-    ],
+    "aliases": ["upstreet"],
     "packages": []
   },
   {
@@ -5075,13 +4334,7 @@
     "name": "VAT Sense API",
     "description": "VAT number validation API for UK, EU and worldwide. Global VAT and GST rates API, currency conversion, invoicing API. Trusted by thousands. Free plan available.",
     "llms_txt_url": "https://vatsense.com/llms.txt",
-    "aliases": [
-      "vat",
-      "sense",
-      "vat sense",
-      "sense api",
-      "api"
-    ],
+    "aliases": ["vat", "sense", "vat sense", "sense api", "api"],
     "packages": [],
     "llms_full_txt_url": "https://vatsense.com/llms-full.txt"
   },
@@ -5090,10 +4343,7 @@
     "name": "VDO.Ninja",
     "description": "Bring live video from your smartphone, computer, or friends directly into your Studio. 100% free.",
     "llms_txt_url": "https://docs.vdo.ninja/llms.txt",
-    "aliases": [
-      "vdo",
-      "ninja"
-    ],
+    "aliases": ["vdo", "ninja"],
     "packages": [],
     "llms_full_txt_url": "https://docs.vdo.ninja/llms-full.txt"
   },
@@ -5111,10 +4361,7 @@
     "name": "VVS Finance",
     "description": "VVS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly VVS rewards.Low fees, fast transactions and competitive earnings.",
     "llms_txt_url": "https://docs.vvs.finance/llms.txt",
-    "aliases": [
-      "vvs",
-      "finance"
-    ],
+    "aliases": ["vvs", "finance"],
     "packages": [],
     "llms_full_txt_url": "https://docs.vvs.finance/llms-full.txt"
   },
@@ -5166,9 +4413,7 @@
     "name": "Venice.ai",
     "description": "Try Venice.ai for free. Generate text, images, characters and code using private and uncensored AI.",
     "llms_txt_url": "https://docs.venice.ai/llms.txt",
-    "aliases": [
-      "venice"
-    ],
+    "aliases": ["venice"],
     "packages": [],
     "llms_full_txt_url": "https://docs.venice.ai/llms-full.txt"
   },
@@ -5186,12 +4431,7 @@
     "name": "Vercel's AI SDK",
     "description": "From the creators of Next.js, the AI SDK is a free open-source library that gives you the tools you need to build AI-powered products.",
     "llms_txt_url": "https://ai-sdk.dev/llms.txt",
-    "aliases": [
-      "vercel-ai-sdk",
-      "vercel",
-      "vercel sdk",
-      "sdk"
-    ]
+    "aliases": ["vercel-ai-sdk", "vercel", "vercel sdk", "sdk"]
   },
   {
     "id": "verdn",
@@ -5255,10 +4495,7 @@
     "name": "Voxel Busters",
     "description": "Voxel Busters delivers professional Unity plugins for mobile game developers, to seamlessly integrate essential iOS & Android features in Unity game engine.",
     "llms_txt_url": "https://voxelbusters.com/llms.txt",
-    "aliases": [
-      "voxel",
-      "busters"
-    ],
+    "aliases": ["voxel", "busters"],
     "packages": [],
     "llms_full_txt_url": "https://www.voxelbusters.com/llms-full.txt"
   },
@@ -5270,21 +4507,13 @@
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "unplugin-vue-macros"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["unplugin-vue-macros"],
         "repo_url": "https://github.com/vue-macros/vue-macros"
       }
     ],
     "llms_full_txt_url": "https://vue-macros.dev/llms-full.txt",
-    "aliases": [
-      "vue",
-      "macros"
-    ]
+    "aliases": ["vue", "macros"]
   },
   {
     "id": "weka",
@@ -5341,11 +4570,7 @@
     "name": "Welcome to HTMLHint",
     "description": "The web''s most popular static code analysis tool you need for your HTML. Available as a CLI tool, VS Code extension, and more.",
     "llms_txt_url": "https://htmlhint.com/llms.txt",
-    "aliases": [
-      "htmlhint",
-      "welcome htmlhint",
-      "welcome"
-    ],
+    "aliases": ["htmlhint", "welcome htmlhint", "welcome"],
     "packages": [],
     "llms_full_txt_url": "https://htmlhint.com/llms-full.txt"
   },
@@ -5414,13 +4639,7 @@
     "name": "Wot Design Uni",
     "description": "A uni-app component library built with reference to wot-design.",
     "llms_txt_url": "https://wot-design-uni.cn/llms.txt",
-    "aliases": [
-      "wot",
-      "uni",
-      "wot design",
-      "design uni",
-      "design"
-    ],
+    "aliases": ["wot", "uni", "wot design", "design uni", "design"],
     "packages": [],
     "llms_full_txt_url": "https://wot-ui.cn/llms-full.txt"
   },
@@ -5438,9 +4657,7 @@
     "name": "X-CMD",
     "description": "A compact yet powerful command-line toolkit. Bootstrap 1000+ command line tools in seconds.",
     "llms_txt_url": "https://x-cmd.com/llms.txt",
-    "aliases": [
-      "cmd"
-    ],
+    "aliases": ["cmd"],
     "packages": [],
     "llms_full_txt_url": "https://www.x-cmd.com/llms-full.txt"
   },
@@ -5476,13 +4693,7 @@
     "name": "ZAPHYR PHP Framework",
     "description": "ZAPHYR is a breath of fresh air in the PHP ecosystem, providing a flexible,' modular, and lightweight open source framework for web development.",
     "llms_txt_url": "https://zaphyr.org/llms.txt",
-    "aliases": [
-      "zaphyr",
-      "php",
-      "framework",
-      "zaphyr php",
-      "php framework"
-    ]
+    "aliases": ["zaphyr", "php", "framework", "zaphyr php", "php framework"]
   },
   {
     "id": "zag",
@@ -5561,10 +4772,7 @@
     "name": "alexop.dev",
     "description": "I did not see how powerful MCP was until I used Claude Code with the Playwright MCP.",
     "llms_txt_url": "https://alexop.dev/llms.txt",
-    "aliases": [
-      "alexop",
-      "dev"
-    ],
+    "aliases": ["alexop", "dev"],
     "packages": [],
     "llms_full_txt_url": "https://alexop.dev/llms-full.txt"
   },
@@ -5573,10 +4781,7 @@
     "name": "birds.dog",
     "description": "The AI Abstraction Layer on Sui",
     "llms_txt_url": "https://docs.birds.dog/llms.txt",
-    "aliases": [
-      "birds",
-      "dog"
-    ],
+    "aliases": ["birds", "dog"],
     "packages": [],
     "llms_full_txt_url": "https://docs.birds.dog/llms-full.txt"
   },
@@ -5593,21 +4798,12 @@
     "name": "daisyUI",
     "description": "Best Tailwind Components Library - Free UI components for Tailwind CSS.",
     "llms_txt_url": "https://daisyui.com/llms.txt",
-    "aliases": [
-      "daisy-ui",
-      "tailwind-components"
-    ],
+    "aliases": ["daisy-ui", "tailwind-components"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "css",
-          "javascript",
-          "typescript"
-        ],
-        "package_names": [
-          "daisyui"
-        ],
+        "languages": ["css", "javascript", "typescript"],
+        "package_names": ["daisyui"],
         "repo_url": "https://github.com/saadeghi/daisyui"
       }
     ]
@@ -5617,9 +4813,7 @@
     "name": "dat1.co",
     "description": "Dat1 is a serverless GPU platform with fast and effortless scaling, low cold starts, and cost-efficient, pay-per-second pricing.",
     "llms_txt_url": "https://dat1.co/llms.txt",
-    "aliases": [
-      "dat1"
-    ],
+    "aliases": ["dat1"],
     "packages": [],
     "llms_full_txt_url": "https://dat1.co/llms-full.txt"
   },
@@ -5636,18 +4830,12 @@
     "name": "dotenvx",
     "description": "Environment variable management tool",
     "llms_txt_url": "https://dotenvx.com/llms.txt",
-    "aliases": [
-      "dotenv-x"
-    ],
+    "aliases": ["dotenv-x"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "javascript"
-        ],
-        "package_names": [
-          "@dotenvx/dotenvx"
-        ],
+        "languages": ["javascript"],
+        "package_names": ["@dotenvx/dotenvx"],
         "repo_url": "https://github.com/dotenvx/dotenvx"
       }
     ]
@@ -5666,10 +4854,7 @@
     "name": "giga.tools",
     "description": "A collection of small in-browser tools for developers, designers, and power-users.",
     "llms_txt_url": "https://giga.tools/llms.txt",
-    "aliases": [
-      "giga",
-      "tools"
-    ],
+    "aliases": ["giga", "tools"],
     "packages": []
   },
   {
@@ -5677,10 +4862,7 @@
     "name": "glucn.com",
     "description": "Personal website and blog of glucn, a passionate full-stack developer building innovative solutions with code.",
     "llms_txt_url": "https://glucn.com/llms.txt",
-    "aliases": [
-      "glucn",
-      "com"
-    ],
+    "aliases": ["glucn", "com"],
     "packages": []
   },
   {
@@ -5696,10 +4878,7 @@
     "name": "i3D.net",
     "description": "i3D.net is a global infrastructure provider, offering low-latency network & solutions to game studios, RTC and enterprises.",
     "llms_txt_url": "https://docs.i3d.net/llms.txt",
-    "aliases": [
-      "i3d",
-      "net"
-    ],
+    "aliases": ["i3d", "net"],
     "packages": [],
     "llms_full_txt_url": "https://docs.i3d.net/llms-full.txt"
   },
@@ -5717,10 +4896,7 @@
     "name": "jobdata API",
     "description": "Gather insights into the hiring market with our simple job data API - get job listings in JSON format from thousands of companies across all industries.",
     "llms_txt_url": "https://jobdataapi.com/llms.txt",
-    "aliases": [
-      "jobdata",
-      "api"
-    ],
+    "aliases": ["jobdata", "api"],
     "packages": [],
     "llms_full_txt_url": "https://jobdataapi.com/llms-full.txt"
   },
@@ -5737,10 +4913,7 @@
     "name": "llms.txt",
     "description": "Documentation standard for LLM-powered applications",
     "llms_txt_url": "https://llmstxt.org/llms.txt",
-    "aliases": [
-      "llms",
-      "txt"
-    ],
+    "aliases": ["llms", "txt"],
     "packages": []
   },
   {
@@ -5773,10 +4946,7 @@
     "name": "prompt-kit",
     "description": "Core building blocks for AI apps. High-quality, accessible, and customizable components for AI interfaces. Built with React, shadcn/ui and Tailwind CSS.",
     "llms_txt_url": "https://www.prompt-kit.com/llms.txt",
-    "aliases": [
-      "prompt",
-      "kit"
-    ],
+    "aliases": ["prompt", "kit"],
     "packages": [],
     "llms_full_txt_url": "https://www.prompt-kit.com/llms-full.txt"
   },
@@ -5785,20 +4955,12 @@
     "name": "promptfoo",
     "description": "Evaluate and test LLM outputs, collect human feedback, prevent regressions, and improve your prompts.",
     "llms_txt_url": "https://www.promptfoo.dev/llms.txt",
-    "aliases": [
-      "prompt-testing",
-      "llm-testing"
-    ],
+    "aliases": ["prompt-testing", "llm-testing"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "promptfoo"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["promptfoo"],
         "repo_url": "https://github.com/promptfoo/promptfoo"
       }
     ],
@@ -5809,10 +4971,7 @@
     "name": "uminai MCP",
     "description": "Curated collection of MCP Servers, MCP Clients including Awesome MCP Servers and workflow for LLM integration.",
     "llms_txt_url": "https://mcp.umin.ai/llms.txt",
-    "aliases": [
-      "uminai",
-      "mcp"
-    ],
+    "aliases": ["uminai", "mcp"],
     "packages": []
   },
   {
@@ -5820,10 +4979,7 @@
     "name": "useapi.net",
     "description": "Experimental API for popular AI services by useapi.net.",
     "llms_txt_url": "https://useapi.net/llms.txt",
-    "aliases": [
-      "useapi",
-      "net"
-    ],
+    "aliases": ["useapi", "net"],
     "packages": []
   },
   {
@@ -5831,19 +4987,12 @@
     "name": "viem",
     "description": "Build reliable Ethereum apps and libraries with lightweight, composable, and type-safe modules. A modern, efficient alternative to ethers.js.",
     "llms_txt_url": "https://viem.sh/llms.txt",
-    "aliases": [
-      "wevm"
-    ],
+    "aliases": ["wevm"],
     "packages": [
       {
         "ecosystem": "npm",
-        "languages": [
-          "typescript",
-          "javascript"
-        ],
-        "package_names": [
-          "viem"
-        ],
+        "languages": ["typescript", "javascript"],
+        "package_names": ["viem"],
         "repo_url": "https://github.com/wevm/viem"
       }
     ],
@@ -5863,10 +5012,7 @@
     "name": "02AI.DEV",
     "description": "Affordable AI planning, setup, maintenance, and development for solopreneurs.",
     "llms_txt_url": "https://02ai.dev/llms.txt",
-    "aliases": [
-      "02ai",
-      "dev"
-    ],
+    "aliases": ["02ai", "dev"],
     "packages": [],
     "llms_full_txt_url": "https://02ai.dev/llms-full.txt"
   },
@@ -5892,11 +5038,7 @@
     "name": "AI Financial management",
     "description": "Smarter money decisions start here. Your artificial intelligence financial advisor in one powerful app for personal and business goals.",
     "llms_txt_url": "https://scripnote.com/llms.txt",
-    "aliases": [
-      "financial",
-      "management",
-      "financial management"
-    ],
+    "aliases": ["financial", "management", "financial management"],
     "packages": []
   },
   {
@@ -5904,11 +5046,7 @@
     "name": "AI Predict Stock",
     "description": "> Leveraging advanced AI to provide global investors with real-time stock data, in-depth analysis, visualizations, and intelligent predictions for smarter investment decisions.",
     "llms_txt_url": "https://www.aipredictstock.com/llms.txt",
-    "aliases": [
-      "predict",
-      "stock",
-      "predict stock"
-    ],
+    "aliases": ["predict", "stock", "predict stock"],
     "packages": [],
     "llms_full_txt_url": "https://www.aipredictstock.com/llms-full.txt"
   },
@@ -5925,9 +5063,7 @@
     "name": "AceEssay.ai",
     "description": "Ace Essay Humanize technology ensures AI-generated text remains undetectable by top detectors like Originality 3.0 and Turnitin.",
     "llms_txt_url": "https://aceessay.ai/llms.txt",
-    "aliases": [
-      "aceessay"
-    ],
+    "aliases": ["aceessay"],
     "packages": []
   },
   {
@@ -5935,11 +5071,7 @@
     "name": "Ai Dream Scope",
     "description": "> Decode your dreams with our AI-powered dream interpretation tool. Get personalized analysis of your dreams based on psychology, symbolism, and cultural insights.",
     "llms_txt_url": "https://aidreamscope.com/llms.txt",
-    "aliases": [
-      "dream",
-      "scope",
-      "dream scope"
-    ],
+    "aliases": ["dream", "scope", "dream scope"],
     "packages": []
   },
   {
@@ -5964,9 +5096,7 @@
     "name": "Answer.AI",
     "description": "AI-powered answering and automation platform",
     "llms_txt_url": "https://www.answer.ai/llms.txt",
-    "aliases": [
-      "answer"
-    ],
+    "aliases": ["answer"],
     "packages": []
   },
   {
@@ -5996,11 +5126,7 @@
     "name": "Assurance en Direct",
     "description": "Assurance auto, habitation, scooter, moto et voiture sans permis. Assurance en ligne et souscription et \u00e9dition attestation et carte verte.",
     "llms_txt_url": "https://www.assuranceendirect.com/llms.txt",
-    "aliases": [
-      "direct",
-      "assurance direct",
-      "assurance"
-    ],
+    "aliases": ["direct", "assurance direct", "assurance"],
     "packages": []
   },
   {
@@ -6059,10 +5185,7 @@
     "name": "Bitcoin.com",
     "description": "The world''s gateway to Bitcoin & cryptocurrency.",
     "llms_txt_url": "https://www.bitcoin.com/llms.txt",
-    "aliases": [
-      "bitcoin",
-      "com"
-    ],
+    "aliases": ["bitcoin", "com"],
     "packages": []
   },
   {
@@ -6111,10 +5234,7 @@
     "name": "Cartography Capital",
     "description": "Bitcoin DCA Tool 0x37FEbD52fcf862Bc0c98d92Fa08C325f9F5Cd670\r\nAltcoin DCA Tool 0xA95dBEB7A10c9819847D4aB0865d84F95b000fb8\r\nWeb3 Daily Company Finder.",
     "llms_txt_url": "https://www.cartography.capital/llms.txt",
-    "aliases": [
-      "cartography",
-      "capital"
-    ],
+    "aliases": ["cartography", "capital"],
     "packages": []
   },
   {
@@ -6138,13 +5258,7 @@
     "name": "Cloud Studio IoT",
     "description": "Full-stack IoT solutions provider: CS Gear platform, CS Link connectivity & CS Sense devices. 250K+ devices, 30+ verticals, cloud or on-premise.",
     "llms_txt_url": "https://cloudstudioiot.com/llms.txt",
-    "aliases": [
-      "studio",
-      "iot",
-      "cloud studio",
-      "studio iot",
-      "cloud"
-    ],
+    "aliases": ["studio", "iot", "cloud studio", "studio iot", "cloud"],
     "packages": [],
     "llms_full_txt_url": "https://cloudstudioiot.com/llms-full.txt"
   },
@@ -6153,13 +5267,7 @@
     "name": "Cloud Studio IoT",
     "description": "Monitor, automate, and grow your operation from a single IoT solution without the complexity.",
     "llms_txt_url": "https://www.cloudstudioiot.com/llms.txt",
-    "aliases": [
-      "cloud",
-      "studio",
-      "iot",
-      "cloud studio",
-      "studio iot"
-    ],
+    "aliases": ["cloud", "studio", "iot", "cloud studio", "studio iot"],
     "packages": [],
     "llms_full_txt_url": "https://www.cloudstudioiot.com/llms-full.txt"
   },
@@ -6209,13 +5317,7 @@
     "name": "Community Helm Charts",
     "description": "Discover community-driven Helm charts for open-source tools lacking official support. Deploy apps effortlessly on Kubernetes.",
     "llms_txt_url": "https://community-charts.github.io/llms.txt",
-    "aliases": [
-      "community",
-      "helm",
-      "charts",
-      "community helm",
-      "helm charts"
-    ],
+    "aliases": ["community", "helm", "charts", "community helm", "helm charts"],
     "packages": [],
     "llms_full_txt_url": "https://community-charts.github.io/llms-full.txt"
   },
@@ -6282,9 +5384,7 @@
     "name": "Curling IO",
     "description": "Online curling registration and league management made easy.",
     "llms_txt_url": "https://curling.io/llms.txt",
-    "aliases": [
-      "curling"
-    ],
+    "aliases": ["curling"],
     "packages": [],
     "llms_full_txt_url": "https://curling.io/llms-full.txt"
   },
@@ -6308,10 +5408,7 @@
     "name": "Data Surfer",
     "description": "Transform your sales research with AI-powered web analysis. Find hidden opportunities your competitors miss and close more deals with Data Surfer.",
     "llms_txt_url": "https://data-surfer.com/llms.txt",
-    "aliases": [
-      "surfer",
-      "data"
-    ],
+    "aliases": ["surfer", "data"],
     "packages": []
   },
   {
@@ -6328,10 +5425,7 @@
     "name": "Demo Time",
     "description": "Script your coding demos to perfection with this VS Code extension - no typos,' no missteps, just flawless, stress-free presentations every time.",
     "llms_txt_url": "https://demotime.elio.dev/llms.txt",
-    "aliases": [
-      "demo",
-      "time"
-    ],
+    "aliases": ["demo", "time"],
     "packages": []
   },
   {
@@ -6413,9 +5507,7 @@
     "name": "EveryDev.ai",
     "description": "Discover, review, and discuss AI tools. Join the community where builders share insights, rate tools, and connect around AI development.",
     "llms_txt_url": "https://www.everydev.ai/llms.txt",
-    "aliases": [
-      "everydev"
-    ],
+    "aliases": ["everydev"],
     "packages": []
   },
   {
@@ -6431,10 +5523,7 @@
     "name": "Farcaster MiniApps",
     "description": "Learn to build and distribute apps to Farcaster users",
     "llms_txt_url": "https://miniapps.farcaster.xyz/llms.txt",
-    "aliases": [
-      "farcaster",
-      "miniapps"
-    ],
+    "aliases": ["farcaster", "miniapps"],
     "packages": [],
     "llms_full_txt_url": "https://miniapps.farcaster.xyz/llms-full.txt"
   },
@@ -6443,10 +5532,7 @@
     "name": "Feedback Sync",
     "description": "Centralize customer feedback. Build a better product.\\r\\nTurn scattered customer feedback, an AI-driven app for Slack.",
     "llms_txt_url": "https://www.feedbacksync.ai/llms.txt",
-    "aliases": [
-      "feedback",
-      "sync"
-    ],
+    "aliases": ["feedback", "sync"],
     "packages": []
   },
   {
@@ -6454,9 +5540,7 @@
     "name": "Fibery",
     "description": "Fibery is a connected work platform that replaces scattered tools with a unified workspace for teams to manage projects, wikis, and workflows.",
     "llms_txt_url": "https://fibery.io/llms.txt",
-    "aliases": [
-      "fibery.io"
-    ],
+    "aliases": ["fibery.io"],
     "llms_full_txt_url": "https://fibery.com/llms-full.txt"
   },
   {
@@ -6517,10 +5601,7 @@
     "name": "Gaslighting Check",
     "description": "AI-powered tool that analyzes text, audio, and conversations to detect manipulation tactics like gaslighting and emotional abuse.",
     "llms_txt_url": "https://www.gaslightingcheck.com/llms.txt",
-    "aliases": [
-      "gaslighting",
-      "check"
-    ],
+    "aliases": ["gaslighting", "check"],
     "packages": []
   },
   {
@@ -6569,10 +5650,7 @@
     "name": "Graphite Note",
     "description": "A no-code ML builder that lets data analysts create ML models in minutes. Turn your data into prediction and actionable insights instantly, and power your AI",
     "llms_txt_url": "https://graphite-note.com/llms.txt",
-    "aliases": [
-      "graphite",
-      "note"
-    ],
+    "aliases": ["graphite", "note"],
     "packages": []
   },
   {
@@ -6642,9 +5720,7 @@
     "name": "Home - TZ",
     "description": "Solution Provider and manufacturer of PET PP PS PLA plastic sheet extrusion line, fully auto thermoforming machine, plastic cup making machine.",
     "llms_txt_url": "https://tz-machinery.com/llms.txt",
-    "aliases": [
-      "home"
-    ],
+    "aliases": ["home"],
     "packages": []
   },
   {
@@ -6652,9 +5728,7 @@
     "name": "IG Exporter",
     "description": "IG exporter - export Instagram followers and following to CSV using browser extension. Built for Google Chrome and Microsoft Edge.",
     "llms_txt_url": "https://igexporter.com/llms.txt",
-    "aliases": [
-      "exporter"
-    ],
+    "aliases": ["exporter"],
     "packages": []
   },
   {
@@ -6662,10 +5736,7 @@
     "name": "Incol Intelligence",
     "description": "InCol Intelligence\u00a9 delivers Climate-Related Risk Management | Decision Making | Reporting.",
     "llms_txt_url": "https://www.incolintelligence.com/llms.txt",
-    "aliases": [
-      "incol",
-      "intelligence"
-    ],
+    "aliases": ["incol", "intelligence"],
     "packages": []
   },
   {
@@ -6698,9 +5769,7 @@
     "name": "Lacreme.ai",
     "description": "D\u00e9couvrez les meilleurs outils d''intelligence artificielle sur Lacreme.ai. Comparez les prix, avis et les fonctionnalit\u00e9s des derni\u00e8res IA.",
     "llms_txt_url": "https://lacreme.ai/llms.txt",
-    "aliases": [
-      "lacreme"
-    ],
+    "aliases": ["lacreme"],
     "packages": []
   },
   {
@@ -6733,11 +5802,7 @@
     "name": "Life with AI",
     "description": "Speculative fiction about human-AI coexistence and a collaborative engineering knowledge base for Arcology One \u2014 spanning multiple engineering domains with hundreds of quantitative parameters and open research questions.",
     "llms_txt_url": "https://lifewithai.ai/llms.txt",
-    "aliases": [
-      "life",
-      "with",
-      "life with"
-    ],
+    "aliases": ["life", "with", "life with"],
     "packages": [],
     "llms_full_txt_url": "https://lifewithai.ai/llms-full.txt"
   },
@@ -6764,11 +5829,7 @@
     "name": "Lots of CSVs",
     "description": "CSV data management and processing platform",
     "llms_txt_url": "https://lotsofcsvs.com/llms.txt",
-    "aliases": [
-      "lots",
-      "csvs",
-      "lots csvs"
-    ],
+    "aliases": ["lots", "csvs", "lots csvs"],
     "packages": []
   },
   {
@@ -6802,10 +5863,7 @@
     "name": "Manifestly Checklists",
     "description": "Manifestly Checklists helps teams automate recurring workflows, SOPs, and checklists. Get work done efficiently with our no-code & low-code automation.",
     "llms_txt_url": "https://www.manifest.ly/llms.txt",
-    "aliases": [
-      "manifestly",
-      "checklists"
-    ],
+    "aliases": ["manifestly", "checklists"],
     "packages": [],
     "llms_full_txt_url": "https://www.manifest.ly/llms-full.txt"
   },
@@ -6879,11 +5937,7 @@
     "name": "Mystery-o-matic",
     "description": "Interactive mystery and game generation platform",
     "llms_txt_url": "https://mystery-o-matic.com/llms.txt",
-    "aliases": [
-      "mystery",
-      "matic",
-      "mystery matic"
-    ],
+    "aliases": ["mystery", "matic", "mystery matic"],
     "packages": []
   },
   {
@@ -6891,9 +5945,7 @@
     "name": "NH AI Meetup",
     "description": "New Hampshire's community for AI enthusiasts, professionals, and learners. Join us for meetups, presentations, and discussions about artificial intelligence.",
     "llms_txt_url": "https://nh-ai-meetup.com/llms.txt",
-    "aliases": [
-      "meetup"
-    ],
+    "aliases": ["meetup"],
     "packages": [],
     "llms_full_txt_url": "https://nh-ai-meetup.com/llms-full.txt"
   },
@@ -6929,9 +5981,7 @@
     "name": "NomadHelper.AI",
     "description": "Get personalized itineraries, season planning for nomads, instant cost calculations, and smart destination recommendations.",
     "llms_txt_url": "https://www.nomadhelper.ai/llms.txt",
-    "aliases": [
-      "nomadhelper"
-    ],
+    "aliases": ["nomadhelper"],
     "packages": []
   },
   {
@@ -6939,9 +5989,7 @@
     "name": "Once UI",
     "description": "An open-source design system for indie creators. Deploy fully functional, branded web apps in hours.",
     "llms_txt_url": "https://once-ui.com/llms.txt",
-    "aliases": [
-      "once"
-    ],
+    "aliases": ["once"],
     "packages": []
   },
   {
@@ -6991,10 +6039,7 @@
     "name": "Personal Page",
     "description": "HI THER, I AM Manoj K. Chauhan full stack designer ABOUT Designing Solutions for Over 22 Years Expertise in UI/UX design, branding, web development.",
     "llms_txt_url": "https://pixonstudio.com/llms.txt",
-    "aliases": [
-      "personal",
-      "page"
-    ],
+    "aliases": ["personal", "page"],
     "packages": []
   },
   {
@@ -7002,10 +6047,7 @@
     "name": "Petite Box",
     "description": "\u201cPetite Box\u201d offre box letterarie a tema, abbinando romanzi selezionati con gadget unici, snack locali e bevande tematiche.",
     "llms_txt_url": "https://www.petitebox.it/llms.txt",
-    "aliases": [
-      "petite",
-      "box"
-    ],
+    "aliases": ["petite", "box"],
     "packages": []
   },
   {
@@ -7013,13 +6055,7 @@
     "name": "ProGuard Pest Control",
     "description": "ProGuard Pest Control offers expert pest and exterminator services in Boise, ID.",
     "llms_txt_url": "https://proguardpest.com/llms.txt",
-    "aliases": [
-      "proguard",
-      "pest",
-      "control",
-      "proguard pest",
-      "pest control"
-    ],
+    "aliases": ["proguard", "pest", "control", "proguard pest", "pest control"],
     "packages": []
   },
   {
@@ -7027,9 +6063,7 @@
     "name": "QRco.au",
     "description": "Australia''s ultimate QR Code Generator & URL Shortener - qrco.au | ''QR Code'' is a trademark of DENSO WAVE INCORPORATED",
     "llms_txt_url": "https://www.qrco.au/llms.txt",
-    "aliases": [
-      "qrco"
-    ],
+    "aliases": ["qrco"],
     "packages": []
   },
   {
@@ -7064,10 +6098,7 @@
     "name": "Receipt Converter",
     "description": "Upload a receipt photo and get a clean Excel, CSV, JSON, or PDF. High-precision AI extracts every line item, tax, and total. Free to try, no account needed.",
     "llms_txt_url": "https://receiptconverter.com/llms.txt",
-    "aliases": [
-      "receipt",
-      "converter"
-    ],
+    "aliases": ["receipt", "converter"],
     "packages": [],
     "llms_full_txt_url": "https://receiptconverter.com/llms-full.txt"
   },
@@ -7093,9 +6124,7 @@
     "name": "Ri Xu Online",
     "description": "Ri Xu Online -- Weaving dreams \u00b7 Achievements of the future",
     "llms_txt_url": "https://xuri.me/llms.txt",
-    "aliases": [
-      "online"
-    ],
+    "aliases": ["online"],
     "packages": [],
     "llms_full_txt_url": "https://xuri.me/llms-full.txt"
   },
@@ -7134,9 +6163,7 @@
     "name": "Roc",
     "description": "Fast and safe programming language",
     "llms_txt_url": "https://www.roc-lang.org/llms.txt",
-    "aliases": [
-      "roc-lang"
-    ]
+    "aliases": ["roc-lang"]
   },
   {
     "id": "rsdoctor",
@@ -7179,9 +6206,7 @@
     "name": "SGNL.ai",
     "description": "Eliminate standing access to critical systems, drastically reduce your blast radius, and achieve Zero Standing Privilege with SGNL''s dynamic access management.",
     "llms_txt_url": "https://sgnl.ai/llms.txt",
-    "aliases": [
-      "sgnl"
-    ],
+    "aliases": ["sgnl"],
     "packages": [],
     "llms_full_txt_url": "https://sgnl.ai/llms-full.txt"
   },
@@ -7190,10 +6215,7 @@
     "name": "SVG Viewer",
     "description": "Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time.",
     "llms_txt_url": "https://svgviewer.app/llms.txt",
-    "aliases": [
-      "svg",
-      "viewer"
-    ],
+    "aliases": ["svg", "viewer"],
     "packages": [],
     "llms_full_txt_url": "https://svgviewer.app/llms-full.txt"
   },
@@ -7226,10 +6248,7 @@
     "name": "Scraping Proxies",
     "description": "Dive into our proxy reviews and discover the best proxy servers in the market. Compare between proxy types with our proxy server reviews online.",
     "llms_txt_url": "https://scrapingproxies.best/llms.txt",
-    "aliases": [
-      "scraping",
-      "proxies"
-    ],
+    "aliases": ["scraping", "proxies"],
     "packages": []
   },
   {
@@ -7260,9 +6279,7 @@
     "name": "Sekhlo.pk",
     "description": "Your gateway to a world of limitless learning and earning opportunities from the comfort of your own home. At Sekhlo.pk, we believe in empowering individuals.",
     "llms_txt_url": "https://www.sekhlo.pk/llms.txt",
-    "aliases": [
-      "sekhlo"
-    ],
+    "aliases": ["sekhlo"],
     "packages": []
   },
   {
@@ -7278,10 +6295,7 @@
     "name": "Side Space",
     "description": "Your AI-Powered Vertical Tabs Manager",
     "llms_txt_url": "https://sidespace.app/llms.txt",
-    "aliases": [
-      "side",
-      "space"
-    ],
+    "aliases": ["side", "space"],
     "packages": [],
     "llms_full_txt_url": "https://www.sidespace.app/llms-full.txt"
   },
@@ -7298,13 +6312,7 @@
     "name": "Sky Follower Bridge",
     "description": "Effortlessly migrate your followers from X, Twitter, and Threads to Bluesky with our free browser extension.",
     "llms_txt_url": "https://www.sky-follower-bridge.dev/llms.txt",
-    "aliases": [
-      "sky",
-      "follower",
-      "bridge",
-      "sky follower",
-      "follower bridge"
-    ],
+    "aliases": ["sky", "follower", "bridge", "sky follower", "follower bridge"],
     "packages": []
   },
   {
@@ -7359,10 +6367,7 @@
     "name": "Stephanie Kabi",
     "description": "I''m a Growth Product Manager and Senior Product Designer based in Nairobi working with impact-focused brands and teams. Get in touch.",
     "llms_txt_url": "https://stephaniekabi.com/llms.txt",
-    "aliases": [
-      "stephanie",
-      "kabi"
-    ],
+    "aliases": ["stephanie", "kabi"],
     "packages": []
   },
   {
@@ -7388,10 +6393,7 @@
     "name": "Study Fetch",
     "description": "Study Fetch - Platform and services",
     "llms_txt_url": "https://www.studyfetch.com/llms.txt",
-    "aliases": [
-      "study",
-      "fetch"
-    ],
+    "aliases": ["study", "fetch"],
     "packages": []
   },
   {
@@ -7474,11 +6476,7 @@
     "name": "TwicPics by Frontify",
     "description": "TwicPics delivers perfectly sized media to your websites and applications in real-time to provide the best possible experience to all your end users.",
     "llms_txt_url": "https://www.twicpics.com/llms.txt",
-    "aliases": [
-      "twicpics",
-      "frontify",
-      "twicpics frontify"
-    ],
+    "aliases": ["twicpics", "frontify", "twicpics frontify"],
     "packages": [],
     "llms_full_txt_url": "https://www.twicpics.com/llms-full.txt"
   },
@@ -7495,11 +6493,7 @@
     "name": "T\u00e9l\u00e9assistance S\u00e9nior",
     "description": "T\u00e9l\u00e9assistance pour 24,90 \u20ac / mois. N\u00b0 1 en France avec plus de 250 000 abonn\u00e9s. Installation par nos techniciens \u00e0 domicile en moins de 7 jours.",
     "llms_txt_url": "https://www.tele-assistance-senior.fr/llms.txt",
-    "aliases": [
-      "assistance",
-      "nior",
-      "assistance nior"
-    ],
+    "aliases": ["assistance", "nior", "assistance nior"],
     "packages": []
   },
   {
@@ -7539,9 +6533,7 @@
     "name": "Vignette ID",
     "description": "Vignette ID is the first multi-country road toll app in Europe. Buy vignettes for multiple cars and countries in just a few clicks.",
     "llms_txt_url": "https://e-vignettes.eu/llms.txt",
-    "aliases": [
-      "vignette"
-    ],
+    "aliases": ["vignette"],
     "packages": [],
     "llms_full_txt_url": "https://e-vignettes.eu/llms-full.txt"
   },
@@ -7550,10 +6542,7 @@
     "name": "Voyager Shuffle",
     "description": "Play fun and interactive web games from Star Dream Cruises\u2014designed to entertain guests and enhance the cruise experience online.",
     "llms_txt_url": "https://games.stardreamcruises.com/llms.txt",
-    "aliases": [
-      "voyager",
-      "shuffle"
-    ],
+    "aliases": ["voyager", "shuffle"],
     "packages": []
   },
   {
@@ -7561,10 +6550,7 @@
     "name": "Weather.com",
     "description": "National and Local weather provider",
     "llms_txt_url": "https://weather.com/llms.txt",
-    "aliases": [
-      "weather",
-      "com"
-    ],
+    "aliases": ["weather", "com"],
     "packages": []
   },
   {
@@ -7598,10 +6584,7 @@
     "name": "Wedgwood Insurance",
     "description": "We are Newfoundland''s top insurance broker. We offer advice on home, car, tenant, and commercial insurance. Get a quote today.",
     "llms_txt_url": "https://wedgwoodinsurance.com/llms.txt",
-    "aliases": [
-      "wedgwood",
-      "insurance"
-    ],
+    "aliases": ["wedgwood", "insurance"],
     "packages": []
   },
   {
@@ -7609,11 +6592,7 @@
     "name": "Wild In Africa",
     "description": "Handmade beaded bracelets supporting wildlife conservation. Founded by National Geographic filmmaker Shannon Wild. Order now & #WearYourKarma.",
     "llms_txt_url": "https://wildinafrica.store/apps/llmstxt/llms.txt",
-    "aliases": [
-      "wild",
-      "africa",
-      "wild africa"
-    ],
+    "aliases": ["wild", "africa", "wild africa"],
     "packages": []
   },
   {
@@ -7648,9 +6627,7 @@
     "name": "Zap.ts \u26a1\ufe0f",
     "description": "The boilerplate to build applications as fast as a zap.",
     "llms_txt_url": "https://zap-ts.alexandretrotel.org/llms.txt",
-    "aliases": [
-      "zap"
-    ],
+    "aliases": ["zap"],
     "packages": [],
     "llms_full_txt_url": "https://www.zapstudio.dev/llms-full.txt"
   },
@@ -7686,10 +6663,7 @@
     "name": "etf.capital",
     "description": "Die besten ETFs, Aktien & Sparpl\u00e4ne f\u00fcr langfristige Investitionen. Fonds finden und vergleichen. ETF-Sparplan-Vergleich und Sparplan-Rechner kostenlos!",
     "llms_txt_url": "https://etf.capital/llms.txt",
-    "aliases": [
-      "etf",
-      "capital"
-    ],
+    "aliases": ["etf", "capital"],
     "packages": []
   },
   {
@@ -7697,10 +6671,7 @@
     "name": "gray.gift",
     "description": "Gray.Gift is the first creative storytelling reader and writer platform built for humans and AIs.",
     "llms_txt_url": "https://gray.gift/llms.txt",
-    "aliases": [
-      "gray",
-      "gift"
-    ],
+    "aliases": ["gray", "gift"],
     "packages": [],
     "llms_full_txt_url": "https://gray.gift/llms-full.txt"
   },
@@ -7709,10 +6680,7 @@
     "name": "iSpring Suite",
     "description": "PowerPoint-based eLearning authoring tool for creating SCORM courses, quizzes, simulations, and training videos for corporate learning teams.",
     "llms_txt_url": "https://www.ispringsolutions.com/llms.txt",
-    "aliases": [
-      "ispring",
-      "suite"
-    ],
+    "aliases": ["ispring", "suite"],
     "packages": []
   },
   {
@@ -7729,9 +6697,7 @@
     "name": "underrun.io",
     "description": "Convince Customers from Day One with Public Onboarding Plans.",
     "llms_txt_url": "https://underrun.io/llms.txt",
-    "aliases": [
-      "underrun"
-    ],
+    "aliases": ["underrun"],
     "packages": []
   },
   {
@@ -7807,13 +6773,7 @@
     "name": "Best Boat Lifts",
     "description": "Find the best boat lifts from IMM, including custom-built boat lifts for powerboats, yachts, sailboats, and PWCs.",
     "llms_txt_url": "https://iqboatlifts.com/llms.txt",
-    "aliases": [
-      "boat",
-      "lifts",
-      "best boat",
-      "boat lifts",
-      "best"
-    ],
+    "aliases": ["boat", "lifts", "best boat", "boat lifts", "best"],
     "packages": [],
     "llms_full_txt_url": "https://iqboatlifts.com/llms-full.txt"
   },
@@ -7839,10 +6799,7 @@
     "name": "Chic room",
     "description": "CHIC ROOM offers curated, premium modern home furniture for stylish and affordable living and dining rooms. Experience exceptional customer care with our online store.",
     "llms_txt_url": "https://chicroom.ca/llms.txt",
-    "aliases": [
-      "chic",
-      "room"
-    ],
+    "aliases": ["chic", "room"],
     "packages": []
   },
   {
@@ -7968,10 +6925,7 @@
     "name": "Heritage Collection",
     "description": "Fully-furnished shophouse boutique hotel and serviced apartments in cultural districts. Flexible lease terms. Enquire for best available rates.",
     "llms_txt_url": "https://hericoll.com/llms.txt",
-    "aliases": [
-      "heritage",
-      "collection"
-    ],
+    "aliases": ["heritage", "collection"],
     "packages": [],
     "llms_full_txt_url": "https://hericoll.com/llms-full.txt"
   },
@@ -8016,10 +6970,7 @@
     "name": "Marketing Doctors",
     "description": "Marketing Doctors helps businesses grow with data-backed, honest marketing tactics that attract the right customers at the right time.",
     "llms_txt_url": "https://marketingdrs.com/llms.txt",
-    "aliases": [
-      "doctors",
-      "marketing"
-    ],
+    "aliases": ["doctors", "marketing"],
     "packages": [],
     "llms_full_txt_url": "https://marketingdrs.com/llms-full.txt"
   },
@@ -8045,10 +6996,7 @@
     "name": "Mubashir Hassan",
     "description": "Mubashir Hassan offers expert services in Local & Ecommerce SEO, Prompt Engineering, AI/Vibe Coding, Shopify & WordPress SEO, Web Development.",
     "llms_txt_url": "https://www.mubashirhassan.com/llms.txt",
-    "aliases": [
-      "mubashir",
-      "hassan"
-    ],
+    "aliases": ["mubashir", "hassan"],
     "packages": []
   },
   {
@@ -8087,10 +7035,7 @@
     "name": "Plain",
     "description": "Plain is a customer support platform built for technical teams, providing a unified inbox with API-first integrations.",
     "llms_txt_url": "https://www.plain.com/docs/llms.txt",
-    "aliases": [
-      "plain support",
-      "plain.com"
-    ],
+    "aliases": ["plain support", "plain.com"],
     "llms_full_txt_url": "https://www.plain.com/docs/llms-full.txt"
   },
   {
@@ -8167,9 +7112,7 @@
     "name": "Television.AI",
     "description": "Television.AI is an AI-powered video editor specialized in news and sports video production for broadcasters, publishers, and news agencies.",
     "llms_txt_url": "https://www.television.ai/llms.txt",
-    "aliases": [
-      "television"
-    ],
+    "aliases": ["television"],
     "packages": []
   },
   {
@@ -8177,13 +7120,7 @@
     "name": "The Crawl Tool",
     "description": "The Crawl Tool scans websites to easily find deeprooted user experience and SEO problems. The smartest SEO crawler is the ultimate tool to improve your web site",
     "llms_txt_url": "https://www.thecrawltool.com/llms.txt",
-    "aliases": [
-      "crawl",
-      "tool",
-      "the crawl",
-      "crawl tool",
-      "the"
-    ],
+    "aliases": ["crawl", "tool", "the crawl", "crawl tool", "the"],
     "packages": [],
     "llms_full_txt_url": "https://www.thecrawltool.com/llms-full.txt"
   },
@@ -8218,10 +7155,7 @@
     "name": "VALD Health",
     "description": "With objective measurement tools, intuitive data collection and actionable insights, VALD technology helps clinicians measure patients'' progress and make data - informed treatment decisions.",
     "llms_txt_url": "https://valdhealth.com/llms.txt",
-    "aliases": [
-      "health",
-      "vald"
-    ],
+    "aliases": ["health", "vald"],
     "packages": []
   },
   {
@@ -8241,5 +7175,34 @@
       "development"
     ],
     "packages": []
+  },
+  {
+    "id": "google-adk",
+    "name": "Google ADK",
+    "description": "Google's open-source, code-first toolkit for building, evaluating, and deploying AI agents.",
+    "llms_txt_url": "https://google.github.io/adk-docs/llms.txt",
+    "aliases": [
+      "agent development kit",
+      "google agent development kit",
+      "agent-development-kit",
+      "adk"
+    ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "languages": ["python"],
+        "package_names": ["google-adk"],
+        "readme_url": "https://raw.githubusercontent.com/google/adk-python/main/README.md",
+        "repo_url": "https://github.com/google/adk-python"
+      },
+      {
+        "ecosystem": "npm",
+        "languages": ["typescript", "javascript"],
+        "package_names": ["@google/adk", "@google/adk-devtools"],
+        "readme_url": "https://raw.githubusercontent.com/google/adk-js/main/README.md",
+        "repo_url": "https://github.com/google/adk-js"
+      }
+    ],
+    "llms_full_txt_url": "https://google.github.io/adk-docs/llms-full.txt"
   }
 ]

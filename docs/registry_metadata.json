@@ -1,7 +1,7 @@
 {
-  "version": "2026-03-25-v4",
+  "version": "2026-03-31-v2",
   "download_url": "https://procontexthq.github.io/known-libraries.json",
-  "checksum": "sha256:e3f04e4cd80e5c9e5921ea2610cded856ceed623ac492dd13ec790364b961cde",
+  "checksum": "sha256:86295612ff4d6f6a3fd509ac743378e3203b06efe89b69782c9ea3d4a2cb7c59",
   "additional_info_download_url": "https://procontexthq.github.io/registry-additional-info.json",
-  "additional_info_checksum": "sha256:88b41ea7f58a44713f2f05097cb5d4f96ac7b7ca9bf4850259fc7d41956c90d7"
+  "additional_info_checksum": "sha256:15c4837292b17f9d856d277acd0ada2cce23ae5a8052febc6f89410974d80f71"
 }
