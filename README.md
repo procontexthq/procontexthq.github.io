@@ -36,7 +36,7 @@ See **[registry-schema.md](registry-schema.md)** for the full field reference �
 
 ## Validation & tooling
 
-The `scripts/validate.py` script validates `docs/known-libraries.json` and `docs/registry-additional-info.json`, then keeps `registry_metadata.json` in sync. It requires Python ≥ 3.11 and [uv](https://docs.astral.sh/uv/).
+The primary contributor workflow is:
 
 ### Setup
 
@@ -44,76 +44,23 @@ The `scripts/validate.py` script validates `docs/known-libraries.json` and `docs
 uv sync
 ```
 
-### Commands
+### Main command
 
-| Command | What it does |
-|---------|--------------|
-| `uv run scripts/validate.py` | Fast schema and cross-entry validation |
-| `uv run scripts/validate.py --urls` | Schema check + URL reachability (rule 22) |
-| `uv run scripts/validate.py --pypi` | Schema check + PyPI existence (rule 23) |
-| `uv run scripts/validate.py checksum` | Run base validation, then compute SHA-256 for both registry JSON files and update `registry_metadata.json` |
-| `uv run scripts/validate.py checksum --urls` | Base validation + URL reachability, then update checksums |
-| `uv run scripts/validate.py checksum --pypi` | Base validation + PyPI existence, then update checksums |
-| `uv run scripts/validate.py checksum --urls --pypi` | Run all checks, then update checksums |
+```bash
+uv run scripts/validate.py checksum
+```
 
-### Validation rules
+That command validates both registry JSON files, computes fresh SHA-256 checksums, and updates `docs/registry_metadata.json`.
 
-#### Per-entry rules (library level)
+For deeper contributor guidance, standalone validator usage, and custom file-path examples, see:
 
-| # | Rule |
-|---|------|
-| 1 | `id` is present and a non-empty string |
-| 2 | `id` matches `^[a-z0-9][a-z0-9_-]*$` |
-| 3 | `name` is present and a non-empty string |
-| 4 | `llms_txt_url` is present and a non-empty string |
-| 5 | `llms_txt_url` is a valid URL starting with `https://` |
-| 6 | `description`, if present, is a non-empty string |
-| 7 | `aliases` is a list of strings |
-| 8 | `packages`, if present, is an array (not an object) |
-| 9 | No fields outside the known set — catches typos like `alias` instead of `aliases` |
-
-Known library-level fields also include optional `llms_full_txt_url` values where a provider publishes a full-documentation entry point.
-
-#### Per-entry rules (PackageEntry level)
-
-| # | Rule |
-|---|------|
-| 10 | `ecosystem` is one of `"pypi"`, `"npm"`, `"conda"`, `"jsr"` |
-| 11 | `package_names` is a list of strings |
-| 12 | `languages`, if present, is a list of strings |
-| 13 | `readme_url`, if present, is a valid URL |
-| 14 | `repo_url`, if present, is a valid URL |
-| 15 | No unknown fields in the PackageEntry object |
-
-#### Cross-entry rules
-
-| # | Rule |
-|---|------|
-| 16 | No two entries share the same `id` |
-| 17 | No two entries share the same package name within the same ecosystem |
-
-#### File-level rules
-
-| # | Rule |
-|---|------|
-| 19 | `known-libraries.json` is valid JSON |
-| 20 | `known-libraries.json` top-level structure is an array |
-| 21 | `known-libraries.json` array is non-empty |
-| 24 | `registry-additional-info.json` is valid JSON |
-| 25 | `registry-additional-info.json` top-level structure is an object |
-| 26 | `registry-additional-info.json.useful_md_probe_base_urls` is a non-empty array |
-| 27 | Every `useful_md_probe_base_urls` entry is a valid URL |
-
-#### Optional network checks (slow)
-
-| # | Flag | Rule |
-|---|------|------|
-| 22 | `--urls` | `llms_txt_url` is reachable (HTTP 200) |
-| 23 | `--pypi` | PyPI `package_names` exist on pypi.org |
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [contributing/registry.md](contributing/registry.md)
+- [contributing/code.md](contributing/code.md)
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add or update entries, field reference, and grouping rules.
+Contributions are welcome! Start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
