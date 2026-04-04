@@ -10,6 +10,7 @@ Usage:
     uv run scripts/validate_libraries.py --pypi
     uv run scripts/validate_libraries.py checksum
     uv run scripts/validate_libraries.py --libraries-file /tmp/known-libraries.json
+    uv run scripts/validate_libraries.py --skip-rule 6
 """
 
 import argparse
@@ -20,6 +21,7 @@ from registry_validation import (
     collect_libraries_errors,
     compute_checksum,
     display_path,
+    normalize_skipped_rules,
     print_validation_result,
     resolve_cli_path,
 )
@@ -31,6 +33,7 @@ def run_validation(args: argparse.Namespace) -> int:
         args.libraries_file,
         check_url_reachability=args.urls,
         check_pypi_packages=args.pypi,
+        skipped_rules=args.skipped_rules,
     )
     return print_validation_result(errors)
 
@@ -60,6 +63,7 @@ examples:
   uv run scripts/validate_libraries.py --pypi
   uv run scripts/validate_libraries.py checksum
   uv run scripts/validate_libraries.py --libraries-file /tmp/known-libraries.json
+  uv run scripts/validate_libraries.py --skip-rule 6
 """,
     )
     parser.add_argument(
@@ -72,11 +76,20 @@ examples:
     parser.add_argument("--urls", action="store_true", help="Also check URL reachability (rule 22, slow)")
     parser.add_argument("--pypi", action="store_true", help="Also verify PyPI packages exist (rule 23, slow)")
     parser.add_argument(
+        "--skip-rule",
+        dest="skipped_rules",
+        action="append",
+        type=int,
+        default=None,
+        help="Skip a specific validation rule. Repeat to skip multiple rules, e.g. --skip-rule 6 --skip-rule 22.",
+    )
+    parser.add_argument(
         "--libraries-file",
         default=None,
         help=f"Path to known-libraries JSON. Defaults to {display_path(LIBRARIES_FILE)}.",
     )
     args = parser.parse_args()
+    args.skipped_rules = normalize_skipped_rules(args.skipped_rules)
     args.libraries_file = resolve_cli_path(args.libraries_file, LIBRARIES_FILE)
 
     if args.command == "checksum":

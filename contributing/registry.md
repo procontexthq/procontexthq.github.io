@@ -97,6 +97,24 @@ uv run scripts/validate.py checksum \
   --metadata-file /tmp/registry_metadata.json
 ```
 
+## Skipping a specific rule
+
+All validator entrypoints support `--skip-rule` and you can repeat it to skip multiple rules.
+
+Full rule reference:
+
+- [validation-rules.md](validation-rules.md)
+
+Examples:
+
+```bash
+uv run scripts/validate.py checksum --skip-rule 6
+uv run scripts/validate_libraries.py --skip-rule 6 --libraries-file /tmp/known-libraries.json
+uv run scripts/validate.py checksum --skip-rule 6 --skip-rule 22
+```
+
+Rule 6 is the description check. Use it when you want to ignore entries whose `description` field is present but empty or invalid during a temporary migration.
+
 ## Grouping rules
 
 Libraries that share the same `llms.txt` should usually be grouped into one entry.

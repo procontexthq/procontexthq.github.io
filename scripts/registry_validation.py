@@ -48,6 +48,16 @@ def resolve_cli_path(value: str | None, default: Path) -> Path:
     return Path(value).expanduser().resolve()
 
 
+def normalize_skipped_rules(values: list[int] | None) -> set[int]:
+    return set(values or [])
+
+
+def filter_skipped_rules(errors: list[ValidationError], skipped_rules: set[int] | None) -> list[ValidationError]:
+    if not skipped_rules:
+        return errors
+    return [error for error in errors if error.rule not in skipped_rules]
+
+
 def load_json_file(path: Path, rule: int) -> tuple[Any | None, list[ValidationError]]:
     errors: list[ValidationError] = []
     try:
@@ -412,6 +422,7 @@ def collect_libraries_errors(
     check_url_reachability: bool = False,
     check_pypi_packages: bool = False,
     append_failed_urls: bool = True,
+    skipped_rules: set[int] | None = None,
 ) -> tuple[list[Any] | None, list[ValidationError]]:
     libraries, errors = validate_libraries_file(libraries_file)
     if libraries is not None:
@@ -419,18 +430,23 @@ def collect_libraries_errors(
 
     if check_url_reachability and libraries:
         url_errors = check_urls(libraries)
-        errors += url_errors
-        if append_failed_urls and url_errors:
+        filtered_url_errors = filter_skipped_rules(url_errors, skipped_rules)
+        errors += filtered_url_errors
+        if append_failed_urls and filtered_url_errors:
             append_failed_url_entries(libraries, url_errors)
 
     if check_pypi_packages and libraries:
         errors += check_pypi(libraries)
 
-    return libraries, errors
+    return libraries, filter_skipped_rules(errors, skipped_rules)
 
 
-def collect_additional_info_errors(additional_info_file: Path) -> list[ValidationError]:
-    return validate_additional_info_file(additional_info_file)
+def collect_additional_info_errors(
+    additional_info_file: Path,
+    *,
+    skipped_rules: set[int] | None = None,
+) -> list[ValidationError]:
+    return filter_skipped_rules(validate_additional_info_file(additional_info_file), skipped_rules)
 
 
 def print_validation_result(errors: list[ValidationError]) -> int:

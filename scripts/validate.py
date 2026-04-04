@@ -12,6 +12,7 @@ Usage:
     uv run scripts/validate.py checksum --urls --pypi  # validation + optional network checks
     uv run scripts/validate.py --libraries-file /tmp/known-libraries.json
     uv run scripts/validate.py checksum --metadata-file /tmp/registry_metadata.json
+    uv run scripts/validate.py --skip-rule 6
 """
 
 import argparse
@@ -25,6 +26,7 @@ from registry_validation import (
     collect_libraries_errors,
     compute_checksum,
     display_path,
+    normalize_skipped_rules,
     print_validation_result,
     resolve_cli_path,
     update_metadata,
@@ -37,10 +39,14 @@ def run_validation(args: argparse.Namespace) -> int:
         args.libraries_file,
         check_url_reachability=args.urls,
         check_pypi_packages=args.pypi,
+        skipped_rules=args.skipped_rules,
     )
 
     print(f"Validating {display_path(args.additional_info_file)} ...")
-    additional_info_errors = collect_additional_info_errors(args.additional_info_file)
+    additional_info_errors = collect_additional_info_errors(
+        args.additional_info_file,
+        skipped_rules=args.skipped_rules,
+    )
     return print_validation_result(library_errors + additional_info_errors)
 
 
@@ -74,6 +80,7 @@ examples:
   uv run scripts/validate.py checksum --pypi       + PyPI package existence before checksum update
   uv run scripts/validate.py --libraries-file /tmp/known-libraries.json
   uv run scripts/validate.py checksum --metadata-file /tmp/registry_metadata.json
+  uv run scripts/validate.py --skip-rule 6
 """,
     )
     parser.add_argument(
@@ -85,6 +92,14 @@ examples:
     )
     parser.add_argument("--urls", action="store_true", help="Also check URL reachability (rule 22, slow)")
     parser.add_argument("--pypi", action="store_true", help="Also verify PyPI packages exist (rule 23, slow)")
+    parser.add_argument(
+        "--skip-rule",
+        dest="skipped_rules",
+        action="append",
+        type=int,
+        default=None,
+        help="Skip a specific validation rule. Repeat to skip multiple rules, e.g. --skip-rule 6 --skip-rule 22.",
+    )
     parser.add_argument(
         "--libraries-file",
         default=None,
@@ -101,6 +116,7 @@ examples:
         help=f"Path to registry metadata JSON for checksum updates. Defaults to {display_path(METADATA_FILE)}.",
     )
     args = parser.parse_args()
+    args.skipped_rules = normalize_skipped_rules(args.skipped_rules)
     args.libraries_file = resolve_cli_path(args.libraries_file, LIBRARIES_FILE)
     args.additional_info_file = resolve_cli_path(args.additional_info_file, ADDITIONAL_INFO_FILE)
     args.metadata_file = resolve_cli_path(args.metadata_file, METADATA_FILE)

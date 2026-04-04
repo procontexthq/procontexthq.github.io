@@ -53,6 +53,19 @@ uv run scripts/validate.py checksum \
   --metadata-file /tmp/registry_metadata.json
 ```
 
+Rule skips are also supported across all entrypoints:
+
+```bash
+uv run scripts/validate.py checksum --skip-rule 6
+uv run scripts/validate_libraries.py --skip-rule 6 --libraries-file /tmp/known-libraries.json
+```
+
+Rule 6 is the optional description validation rule.
+
+Full rule reference:
+
+- [validation-rules.md](validation-rules.md)
+
 ## When changing validator code
 
 Please verify at least:

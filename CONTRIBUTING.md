@@ -7,6 +7,7 @@ Contributions are welcome. This file is the contributor entrypoint and points to
 If you are adding or updating registry data, read:
 
 - [contributing/registry.md](contributing/registry.md)
+- [contributing/validation-rules.md](contributing/validation-rules.md)
 
 If you are changing scripts, validation logic, or repo tooling, read:
 
