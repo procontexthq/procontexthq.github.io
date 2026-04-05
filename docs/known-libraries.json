@@ -14308,29 +14308,6 @@
     "packages": []
   },
   {
-    "id": "hugging-face-hub-python-library",
-    "name": "Hugging Face Hub Python Library",
-    "description": "Python library for interacting with the Hugging Face Hub",
-    "llms_txt_url": "https://huggingface-projects-docs-llms-txt.hf.space/huggingface_hub/llms.txt",
-    "aliases": [
-      "hugging",
-      "face",
-      "hub",
-      "python",
-      "library",
-      "hugging face",
-      "face hub",
-      "hub python",
-      "python library",
-      "hugging face hub",
-      "face hub python",
-      "hub python library",
-      "hugging face hub python",
-      "face hub python library"
-    ],
-    "packages": []
-  },
-  {
     "id": "humanity-2030",
     "name": "Humanity 2030",
     "description": "",
