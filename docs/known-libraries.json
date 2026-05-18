@@ -22019,6 +22019,21 @@
     "packages": []
   },
   {
+    "id": "vercel-zero",
+    "name": "Zero",
+    "description": "An experimental agent-first programming language with structured tooling for debugging and repair.",
+    "llms_txt_url": "https://zerolang.ai/getting-started",
+    "aliases": [
+      "zero",
+      "zerolang",
+      "zero lang",
+      "zero language",
+      "vercel zero",
+      "vercel labs zero"
+    ],
+    "packages": []
+  },
+  {
     "id": "very-important-computing-company",
     "name": "Very Important Computing Company",
     "description": "",
